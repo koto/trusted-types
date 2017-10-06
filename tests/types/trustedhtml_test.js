@@ -56,13 +56,21 @@ describe('TrustedHTML', function() {
       expect('' + TrustedHTML.fromTemplateLiteral `${one}<b>${one}${one}</b>${one}`)
           .toEqual('1<b>11</b>1');
     });
-    it('interpolates in attributes', function() {
+    it('interpolates full attribute values', function() {
       let one = '1';
       let two = '2';
       // eslint-disable-next-line max-len
       expect('' + TrustedHTML.fromTemplateLiteral `<b id="${one}" class="${two}"></b>`)
           .toEqual('<b id="1" class="2"></b>');
     });
+    it('does not interpolates partial attribute values', function() {
+      let one = '1';
+      let two = '2';
+      // eslint-disable-next-line max-len
+      expect('' + TrustedHTML.fromTemplateLiteral `<b id="a${one}b" class="${two}"></b>`)
+          .toEqual('<b id="1" class="2"></b>');
+    });
+
     it('preserves the types', function() {
       let one = TrustedHTML.unsafelyCreate('<i>nested</i>');
       expect('' + TrustedHTML.fromTemplateLiteral `<b>${one}</b>`)

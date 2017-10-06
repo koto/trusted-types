@@ -91,7 +91,8 @@ trustedtypes.types.TrustedHTML.prototype.interpolate_ = function() {
     }
   }
   const parser = new DOMParser();
-  const doc = parser.parseFromString(replaced, 'text/html');
+  const doc = parser.parseFromString('<body>'+ replaced + '</body>',
+      'text/html');
   const iterator = document.createNodeIterator(doc.documentElement, -1);
   let node;
 
@@ -115,12 +116,11 @@ trustedtypes.types.TrustedHTML.prototype.isLeafElementNode_ = function(node) {
 trustedtypes.types.TrustedHTML.prototype.processNode_ = function(node) {
   if (node instanceof Element) {
     [].slice.call(node.attributes).forEach((attr) => {
-      if (attr.value.match(
-          trustedtypes.types.TrustedHTML.INTERPOLATION_REGEXP_LAX_)) {
-        attr.value = attr.value.replace(
-          trustedtypes.types.TrustedHTML.INTERPOLATION_REGEXP_LAX_,
-          this.replaceWithExpressionResult_.bind(this)
-        );
+      let match = attr.value.match(/\$\$\$(\d+)\$\$\$/);
+      if (match) {
+        // TODO(koto): Consider relaxing for inert attributes.
+        node.setAttribute(attr.name,
+            this.templateExpressionResults_[Number(match[1])]);
       }
     });
   }
