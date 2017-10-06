@@ -189,6 +189,42 @@ describe('TrustedTypesEnforcer', function() {
     });
   });
 
+  describe('template literal interpolation', function() {
+    beforeEach(function() {
+      enforcer = new trustedtypes.TrustedTypesEnforcer(ENFORCING_CONFIG);
+      enforcer.install();
+    });
+
+    afterEach(function() {
+      enforcer.uninstall();
+    });
+
+    it('forbids string assignment for node contents', function() {
+      expect(function() {
+        let one = '1';
+        TrustedHTML.fromTemplateLiteral `<b>${one}</b>`;
+      }).toThrowError(TypeError);
+    });
+
+    it('allows TrustedHTML assignment for node contents', function() {
+      let one = TrustedHTML.unsafelyCreate('<i>1</i>');
+      expect('' + TrustedHTML.fromTemplateLiteral `<b>${one}</b>`).toEqual(
+          '<b><i>1</i></b>');
+    });
+
+    it('allows TrustedHTML assignment for partial node contents', function() {
+      let one = TrustedHTML.unsafelyCreate('<i>1</i>');
+      expect('' + TrustedHTML.fromTemplateLiteral `<b># of files: ${one}</b>`)
+          .toEqual('<b># of files: <i>1</i></b>');
+    });
+
+    it('forbids unknown TrustedHTML assignments for node contents', function() {
+      let one = TrustedHTML.unsafelyCreate('<i>1</i>');
+      expect('' + TrustedHTML.fromTemplateLiteral `<b>-${one}-</b>`)
+          .toEqual('<b>-<i>1</i>-</b>');
+    });
+  });
+
   describe('enforcement allows type-based assignments', function() {
     beforeEach(function() {
       enforcer = new trustedtypes.TrustedTypesEnforcer(ENFORCING_CONFIG);
