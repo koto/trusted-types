@@ -28,6 +28,21 @@ const INTERPOLATION_REGEXP_TEXT_ = /\$\$\$(\d+)\$\$\$/g;
 const INTERPOLATION_REGEXP_ATTR_ = /\$\$\$(\d+)\$\$\$/;
 
 /**
+ * The default sanitizer ID.
+ * @private {!string}
+ */
+const DEFAULT_SANITIZER_ = 'default';
+
+
+/** @private {Object<string,function(string):string>} Map of sanitizers */
+const sanitizers_ = {};
+
+/** @private {Object<string,boolean>} */
+let allowUnsafelyCreate_ = {
+  'allowed': true,
+};
+
+/**
  * A type to represent trusted HTML.
  */
 export class TrustedHTML {
@@ -74,13 +89,39 @@ export class TrustedHTML {
     return new TrustedHTML(escaped);
   }
 
+
   /**
-   * Returns a trusted HTML type that contains an unsafe HTML string.
-   * @param {string} html The unsafe string.
-   * @return {!TrustedHTML}
+   * Returns a TrustedHTML instance sanitizer using a specified sanitizer.
+   * See {@link registerSanitizer()}.
+   * @param  {string} html            HTML string to sanitize.
+   * @param  {string=} optSanitizerId The sanitizer ID to use (optional).
+   * @return {!TrustedHTML}           Sanitized HTML.
    */
-  static unsafelyCreate(html) {
-    return new TrustedHTML(html);
+  static sanitize(html, optSanitizerId) {
+    if (optSanitizerId === undefined) {
+      optSanitizerId = DEFAULT_SANITIZER_;
+    }
+    if (!sanitizers_[optSanitizerId]) {
+      throw new TypeError('Unknown TrustedHTML sanitizer: ' + optSanitizerId);
+    }
+
+    return new TrustedHTML(sanitizers_[optSanitizerId](html));
+  }
+
+  /**
+   * Registers a HTML sanitizer function under a given ID.
+   * The sanitizer must implement application-specific HTML sanitization rules.
+   * Caution: Sanitizer that does not remove JavaScript code exposes the
+   * application to XSS!
+   *
+   * @param  {function(string):string} sanitizer
+   * @param  {string=} optSanitizerId The ID (optional).
+   */
+  static registerSanitizer(sanitizer, optSanitizerId) {
+    if (optSanitizerId === undefined) {
+      optSanitizerId = DEFAULT_SANITIZER_;
+    }
+    sanitizers_[optSanitizerId] = sanitizer;
   }
 
   /**
@@ -89,6 +130,44 @@ export class TrustedHTML {
    */
   static get name() {
     return 'TrustedHTML';
+  }
+
+  /**
+   * Returns a trusted HTML type that contains an unsafe HTML string.
+   * @param {string} html The unsafe string.
+   * @return {!TrustedHTML}
+   */
+  static unsafelyCreate(html) {
+    if (!allowUnsafelyCreate_['allowed']) {
+      throw new TypeError(TrustedHTML.name + '.unsafelyCreate is not allowed.');
+    }
+    return new TrustedHTML(html);
+  }
+
+  /**
+   * Setter for allowUnsafelyCreate.
+   * @param  {boolean} value The new value.
+   */
+  static set allowUnsafelyCreate(value) {
+    allowUnsafelyCreate_['allowed'] = !!value;
+  }
+
+  /**
+   * Getter for allowUnsafelyCreate.
+   * @return  {boolean}
+   */
+  static get allowUnsafelyCreate() {
+    return !!allowUnsafelyCreate_['allowed'];
+  }
+
+  /**
+   * Freezes the configuration. After calling, it will no longer be possible to:
+   *  - modify sanitizers,
+   *  - change {@link allowUnsafelyCreate).
+   */
+  static freezeConfiguration() {
+    Object.freeze(sanitizers_);
+    Object.freeze(allowUnsafelyCreate_);
   }
 
   /**
@@ -199,6 +278,12 @@ if (typeof window['TrustedHTML'] === 'undefined') {
   window['TrustedHTML'] = TrustedHTML;
   window['TrustedHTML']['escape'] = TrustedHTML.escape;
   window['TrustedHTML']['unsafelyCreate'] = TrustedHTML.unsafelyCreate;
+  window['TrustedHTML']['registerSanitizer'] = TrustedHTML.registerSanitizer;
+  window['TrustedHTML']['sanitize'] = TrustedHTML.sanitize;
   window['TrustedHTML']['fromTemplateLiteral'] =
       TrustedHTML.fromTemplateLiteral;
+  window['TrustedHTML']['allowUnsafelyCreate'] =
+      TrustedHTML.allowUnsafelyCreate;
+  window['TrustedHTML']['freezeConfiguration'] =
+      TrustedHTML.freezeConfiguration;
 }

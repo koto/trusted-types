@@ -23,8 +23,10 @@ export class TrustedTypeConfig {
    *   warnings to the console.
    * @param {boolean} isEnforcementEnabled If true enforcement is enabled at
    *   runtime.
+   * @param {boolean} allowUnsafelyCreate If false, unsafelyCreate methods will
+   *   be disabled.
    */
-  constructor(isLoggingEnabled, isEnforcementEnabled) {
+  constructor(isLoggingEnabled, isEnforcementEnabled, allowUnsafelyCreate) {
     /**
       * True if logging is enabled.
       * @type {boolean}
@@ -36,5 +38,11 @@ export class TrustedTypeConfig {
       * @type {boolean}
       */
     this.isEnforcementEnabled = isEnforcementEnabled;
+
+    /**
+     * True if unsafelyCreate methods are allowed.
+     * @type {boolean}
+     */
+    this.allowUnsafelyCreate = allowUnsafelyCreate;
   }
 }

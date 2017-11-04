@@ -94,13 +94,22 @@ export class TrustedTypesEnforcer {
      * @private {Object<string, !function(*): *|undefined>}
      */
     this.originalSetters_ = {};
+
+    /**
+     * @private {boolean}
+     */
+    this.previousAllowUnsafelyCreate_;
   }
 
   /**
-   * Wraps HTML sinks with an enforcement setter, which will enforce 
+   * Wraps HTML sinks with an enforcement setter, which will enforce
    * trusted types and do logging, if enabled.
    */
   install() {
+    this.previousAllowUnsafelyCreate_ =
+        window['TrustedHTML'].allowUnsafelyCreate;
+    window['TrustedHTML'].allowUnsafelyCreate =
+        this.config_.allowUnsafelyCreate;
     this.wrapSetter_(Element.prototype, 'innerHTML', window['TrustedHTML']);
     this.wrapSetter_(Element.prototype, 'outerHTML', window['TrustedHTML']);
     this.wrapSetter_(HTMLIFrameElement.prototype, 'srcdoc',
@@ -125,6 +134,8 @@ export class TrustedTypesEnforcer {
     this.restoreFunction_(Range.prototype, 'createContextualFragment');
     this.restoreFunction_(Element.prototype, 'insertAdjacentHTML');
     this.restoreFunction_(Element.prototype, 'setAttribute');
+    window['TrustedHTML'].allowUnsafelyCreate =
+        this.previousAllowUnsafelyCreate_;
   }
 
   /** Wraps set attribute with an enforcement function. */
@@ -133,10 +144,10 @@ export class TrustedTypesEnforcer {
     this.wrapFunction_(
         Element.prototype,
         'setAttribute',
-        /** 
+        /**
          * @this {TrustedTypesEnforcer}
          * @param {!Function<!Function, *>} originalFn
-         * @return {*} 
+         * @return {*}
          */
         function(originalFn, ...args) {
           return that.setAttributeWrapper_
@@ -188,11 +199,11 @@ export class TrustedTypesEnforcer {
     this.wrapFunction_(
         object,
         name,
-        /** 
+        /**
          * @this {TrustedTypesEnforcer}
          * @param {!Function<!Function, *>} originalFn
-         * @return {*} 
-         */        
+         * @return {*}
+         */
         function(originalFn, ...args) {
           return that.enforce_.call(that, this, name, type, originalFn,
                                     argNumber, args);
@@ -201,7 +212,7 @@ export class TrustedTypesEnforcer {
 
 
   /**
-   * Wraps an existing function with a given function body and stores the 
+   * Wraps an existing function with a given function body and stores the
    * original function.
    * @param {!Object} object The object of the to-be-wrapped property.
    * @param {string} name The name of the property.
@@ -250,10 +261,10 @@ export class TrustedTypesEnforcer {
     installSetter(
         object,
         name,
-        /** 
+        /**
          * @this {TrustedTypesEnforcer}
          * @param {*} value
-         */        
+         */
         function(value) {
           that.enforce_.call(that, this, name, type, originalSetter, 0,
                              [value]);

@@ -26,7 +26,9 @@ describe('TrustedTypesEnforcer', function() {
 
   let ENFORCING_CONFIG = new TrustedTypeConfig(
       /* isLoggingEnabled */ false,
-      /* isEnforcementEnabled */ true);
+      /* isEnforcementEnabled */ true,
+      /* allowUnsafelyCreate */ true
+      );
 
   it('requires calling install to enforce', function() {
     let enforcer = new TrustedTypesEnforcer(ENFORCING_CONFIG);
@@ -314,7 +316,7 @@ describe('TrustedTypesEnforcer', function() {
 
     it('allows typed assignments to protected attributes', function() {
       let src = TrustedScriptURL.unsafelyCreate('http://bad/');
-      // eslint-disable-next-line max-len      
+      // eslint-disable-next-line max-len
       expect('' + TrustedHTML.fromTemplateLiteral `<script src="${src}"></script>`)
           .toEqual('<script src="http://bad/"></script>');
     });
