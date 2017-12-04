@@ -22,7 +22,8 @@ import {TrustedTypeConfig} from './data/trustedtypeconfig.js';
 export function bootstrap() {
   const config = new TrustedTypeConfig(
     /* isLoggingEnabled */ true,
-    /* isEnforcementEnabled */ true);
+    /* isEnforcementEnabled */ true,
+    /* allowUnsafelyCreate */ true);
 
   const trustedTypesEnforcer = new TrustedTypesEnforcer(config);
 
