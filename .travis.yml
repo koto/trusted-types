@@ -5,9 +5,6 @@ node_js:
 before_script:
   - npm install -g gulp-cli
   - gulp
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
   - "sudo chown root /opt/google/chrome/chrome-sandbox"
   - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
 cache:
@@ -16,5 +13,5 @@ cache:
 env:
   - MOZ_HEADLESS=1
 addons:
-  firefox: latest
-  chrome: latest
+  firefox: stable
+  chrome: stable
