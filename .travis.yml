@@ -4,7 +4,7 @@ node_js:
   - "7"
 before_script:
   - npm install -g gulp-cli
-script: gulp
+  - gulp
 cache:
   directories:
     - "node_modules"
