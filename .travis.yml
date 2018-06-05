@@ -1,17 +1,13 @@
-sudo: required
 language: node_js
 node_js:
   - "node"
 before_script:
   - npm install -g gulp-cli
   - gulp
-  - "sudo chown root /opt/google/chrome/chrome-sandbox"
-  - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
 cache:
   directories:
     - "node_modules"
 env:
   - MOZ_HEADLESS=1
 addons:
-  firefox: stable
   chrome: stable
