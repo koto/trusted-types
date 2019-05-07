@@ -52,12 +52,23 @@ module.exports = function(config) {
 
     autoWatch: true,
 
-    browsers: ['ChromeHeadlessNoSandbox', 'FirefoxHeadlessDev', 'ChromeBrowserStack'],
+    browsers: [
+      'ChromeHeadlessNoSandbox',
+      'FirefoxHeadlessDev',
+      'ChromeBrowserStack',
+      'EdgeBrowserStack',
+    ],
 
     customLaunchers: {
       ChromeBrowserStack: {
         base: 'BrowserStack',
         browser: 'chrome',
+        os: 'windows',
+        os_version: '10',
+      },
+      EdgeBrowserStack: {
+        base: 'BrowserStack',
+        browser: 'edge',
         os: 'windows',
         os_version: '10',
       },
