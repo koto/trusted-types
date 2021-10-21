@@ -2079,3 +2079,5 @@ the user’s priority over page authors, as espoused in
 [[html-design-principles]]. Specifically, extensions SHOULD be able to pass strings
 to the [=injection sinks=] without triggering [=default policy=]
 execution, violation generation, or the rejection of the value.
+
+test.
