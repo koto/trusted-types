@@ -2080,4 +2080,4 @@ the user’s priority over page authors, as espoused in
 to the [=injection sinks=] without triggering [=default policy=]
 execution, violation generation, or the rejection of the value.
 
-test #2.
+test #2. {{invalid}}
