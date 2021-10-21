@@ -2,7 +2,7 @@ name: Generate spec
 on:
   pull_request: {}
   push:
-    branches: [main]
+    branches: [main, actions]
 
 jobs:
   main:
