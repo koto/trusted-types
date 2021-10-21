@@ -3,10 +3,10 @@ on:
   push:
     branches: [main, actions]
     paths:
-      - spec/
+      - 'spec/**'
   pull_request:
     paths:
-      - spec/
+      - 'spec/**'
 
 jobs:
   generate:
@@ -20,4 +20,5 @@ jobs:
           SOURCE: spec/index.bs
           DESTINATION: dist/spec
           VALIDATE_LINKS: true
-          GH_PAGES_BRANCH: gh-pages # deploy only happens on push trigger.
+          BUILD_FAIL_ON: link-error
+          GH_PAGES_BRANCH: gh-pages # deploy only happens on push trigger
