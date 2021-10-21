@@ -1,11 +1,15 @@
 name: Generate spec
 on:
-  pull_request: {}
   push:
     branches: [main, actions]
+    paths:
+      - spec/
+  pull_request:
+    paths:
+      - spec/
 
 jobs:
-  main:
+  generate:
     name: Generate spec
     runs-on: ubuntu-20.04
     steps:
@@ -16,3 +20,4 @@ jobs:
           SOURCE: spec/index.bs
           DESTINATION: dist/spec
           VALIDATE_LINKS: true
+          GH_PAGES_BRANCH: gh-pages # deploy only happens on push trigger.
