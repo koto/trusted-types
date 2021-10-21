@@ -1,0 +1,17 @@
+name: Generate spec
+on:
+  pull_request: {}
+  push:
+    branches: [main]
+
+jobs:
+  main:
+    name: Generate spec
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: w3c/spec-prod@v2
+        with:
+          TOOLCHAIN: bikeshed
+          SOURCE: spec/index.bs
+          DESTINATION: dist/spec
