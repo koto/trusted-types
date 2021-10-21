@@ -15,3 +15,4 @@ jobs:
           TOOLCHAIN: bikeshed
           SOURCE: spec/index.bs
           DESTINATION: dist/spec
+          VALIDATE_LINKS: true
