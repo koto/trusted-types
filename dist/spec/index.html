@@ -6,9 +6,9 @@
   <meta content="ED" name="w3c-status">
   <link href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED" rel="stylesheet">
   <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
-  <meta content="Bikeshed version cace53f8c, updated Tue Dec 7 12:12:54 2021 -0800" name="generator">
+  <meta content="Bikeshed version 44af0bf3e, updated Fri Jul 29 17:05:16 2022 -0700" name="generator">
   <link href="https://w3c.github.io/webappsec-trusted-types/dist/spec/" rel="canonical">
-  <meta content="49af1553a61df0af914380c9485d404ea5598bd6" name="document-revision">
+  <meta content="68a66d7f654201f56f992f7ffc318973fa061194" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -635,7 +635,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">Trusted Types</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">Editor’s Draft</a>, <time class="dt-updated" datetime="2022-01-12">12 January 2022</time></p>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">Editor’s Draft</a>, <time class="dt-updated" datetime="2022-08-02">2 August 2022</time></p>
    <details open>
     <summary>More details about this document</summary>
     <div data-fill-with="spec-metadata">
@@ -647,8 +647,9 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <dt>Issue Tracking:
       <dd><a href="https://github.com/w3c/webappsec-trusted-types/issues/">GitHub</a>
       <dd><a href="#issues-index">Inline In Spec</a>
-      <dt class="editor">Editors:
+      <dt class="editor">Editor:
       <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:koto@google.com">Krzysztof Kotowicz</a> (<a class="p-org org" href="https://google.com">Google LLC</a>)
+      <dt class="editor">Former Editor:
       <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:mkwst@google.com">Mike West</a> (<a class="p-org org" href="https://google.com">Google LLC</a>)
      </dl>
     </div>
@@ -969,7 +970,7 @@ enforcing types for HTML injection sinks.</p>
    <p>Examples of HTML injection sinks include:</p>
    <ul>
     <li data-md>
-     <p>Functions that parse &amp; insert HTML strings into the document like <a href="https://www.w3.org/TR/DOM-Parsing/#widl-Element-innerHTML">Element.innerHTML</a>, <a href="https://www.w3.org/TR/DOM-Parsing/#widl-Element-outerHTML">Element.outerHTML</a> setter, or <code class="idl"><a data-link-type="idl" href="#dom-document-write" id="ref-for-dom-document-write">Document.write</a></code>.</p>
+     <p>Functions that parse &amp; insert HTML strings into the document like <a href="https://w3c.github.io/DOM-Parsing/#widl-Element-innerHTML">Element.innerHTML</a>, <a href="https://w3c.github.io/DOM-Parsing/#widl-Element-outerHTML">Element.outerHTML</a> setter, or <code class="idl"><a data-link-type="idl" href="#dom-document-write" id="ref-for-dom-document-write">Document.write</a></code>.</p>
     <li data-md>
      <p>Functions that create a new same-origin <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document">Document</a></code> with caller-controlled
 markup like <code class="idl"><a data-link-type="idl" href="#dom-domparser-parsefromstring" id="ref-for-dom-domparser-parsefromstring">parseFromString()</a></code>,</p>
@@ -1023,11 +1024,11 @@ Trusted Types are backwards-compatible with the regular DOM APIs.</p>
      <div class="support">
       <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
       <hr>
-      <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+      <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
       <hr>
-      <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+      <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
       <hr>
-      <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+      <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
      </div>
     </div>
    </div>
@@ -1053,11 +1054,11 @@ will never change during its lifetime.</p>
      <div class="support">
       <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>90+</span></span>
       <hr>
-      <span class="opera yes"><span>Opera</span><span>76+</span></span><span class="edge_blink yes"><span>Edge</span><span>90+</span></span>
+      <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>90+</span></span>
       <hr>
-      <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+      <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
       <hr>
-      <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>90+</span></span><span class="webview_android yes"><span>Android WebView</span><span>90+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>15.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>64+</span></span>
+      <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
      </div>
     </div>
     <div class="feature">
@@ -1066,11 +1067,11 @@ will never change during its lifetime.</p>
      <div class="support">
       <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
       <hr>
-      <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+      <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
       <hr>
-      <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+      <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
       <hr>
-      <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+      <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
      </div>
     </div>
    </div>
@@ -1087,11 +1088,11 @@ with <code class="idl"><a data-link-type="idl" href="#trustedhtml" id="ref-for-t
      <div class="support">
       <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
       <hr>
-      <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+      <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
       <hr>
-      <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+      <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
       <hr>
-      <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+      <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
      </div>
     </div>
    </div>
@@ -1117,11 +1118,11 @@ will never change during its lifetime.</p>
      <div class="support">
       <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>90+</span></span>
       <hr>
-      <span class="opera yes"><span>Opera</span><span>76+</span></span><span class="edge_blink yes"><span>Edge</span><span>90+</span></span>
+      <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>90+</span></span>
       <hr>
-      <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+      <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
       <hr>
-      <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>90+</span></span><span class="webview_android yes"><span>Android WebView</span><span>90+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>15.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>64+</span></span>
+      <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
      </div>
     </div>
    </div>
@@ -1138,11 +1139,11 @@ with <code class="idl"><a data-link-type="idl" href="#trustedscript" id="ref-for
      <div class="support">
       <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
       <hr>
-      <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+      <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
       <hr>
-      <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+      <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
       <hr>
-      <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+      <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
      </div>
     </div>
    </div>
@@ -1169,11 +1170,11 @@ will never change during its lifetime.</p>
      <div class="support">
       <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
       <hr>
-      <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+      <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
       <hr>
-      <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+      <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
       <hr>
-      <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+      <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
      </div>
     </div>
     <div class="feature">
@@ -1182,11 +1183,11 @@ will never change during its lifetime.</p>
      <div class="support">
       <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
       <hr>
-      <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+      <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
       <hr>
-      <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+      <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
       <hr>
-      <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+      <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
      </div>
     </div>
     <div class="feature">
@@ -1195,11 +1196,11 @@ will never change during its lifetime.</p>
      <div class="support">
       <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>90+</span></span>
       <hr>
-      <span class="opera yes"><span>Opera</span><span>76+</span></span><span class="edge_blink yes"><span>Edge</span><span>90+</span></span>
+      <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>90+</span></span>
       <hr>
-      <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+      <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
       <hr>
-      <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>90+</span></span><span class="webview_android yes"><span>Android WebView</span><span>90+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>15.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>64+</span></span>
+      <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
      </div>
     </div>
    </div>
@@ -1241,11 +1242,11 @@ codebase.</p>
 a given host. 
 <pre class="highlight"><c- a>const</c-> cdnScriptsPolicy <c- o>=</c-> trustedTypes<c- p>.</c->createPolicy<c- p>(</c-><c- t>'cdn-scripts'</c-><c- p>,</c-> <c- p>{</c->
   createScriptURL<c- p>(</c->url<c- p>)</c-> <c- p>{</c->
-    <c- a>const</c-> parsed <c- o>=</c-> <c- k>new</c-> URL<c- p>(</c->url<c- p>,</c-> document<c- p>.</c->baseURI<c- p>);</c->
+    <c- a>const</c-> parsed <c- o>=</c-> <c- ow>new</c-> URL<c- p>(</c->url<c- p>,</c-> document<c- p>.</c->baseURI<c- p>);</c->
     <c- k>if</c-> <c- p>(</c->parsed<c- p>.</c->origin <c- o>==</c-> <c- t>'https://mycdn.example'</c-><c- p>)</c-> <c- p>{</c->
       <c- k>return</c-> url<c- p>;</c->
     <c- p>}</c->
-    <c- k>throw</c-> <c- k>new</c-> TypeError<c- p>(</c-><c- t>'invalid URL'</c-><c- p>);</c->
+    <c- k>throw</c-> <c- ow>new</c-> <c- ne>TypeError</c-><c- p>(</c-><c- t>'invalid URL'</c-><c- p>);</c->
   <c- p>},</c->
 <c- p>});</c->
 
@@ -1295,11 +1296,11 @@ that it’s called only with no attacker-controlled values.
      <div class="support">
       <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
       <hr>
-      <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+      <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
       <hr>
-      <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+      <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
       <hr>
-      <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+      <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
      </div>
     </div>
    </div>
@@ -1342,11 +1343,11 @@ initially empty.</p>
         <div class="support">
          <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
          <hr>
-         <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+         <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
          <hr>
-         <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+         <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
          <hr>
-         <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+         <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
         </div>
        </div>
       </div>
@@ -1387,11 +1388,11 @@ with the following arguments:</p>
   <c- c1>// a flaw in this code could cause DOM XSS.</c->
   createHTML<c- p>(</c->input<c- p>)</c-> <c- p>{</c-> <c- k>return</c-> aSanitizer<c- p>.</c->sanitize<c- p>(</c->input<c- p>)</c-> <c- p>},</c->
   createScriptURL<c- p>(</c->input<c- p>)</c-> <c- p>{</c->
-    <c- a>const</c-> u <c- o>=</c-> <c- k>new</c-> URL<c- p>(</c->dirty<c- p>,</c-> document<c- p>.</c->baseURI<c- p>);</c->
+    <c- a>const</c-> u <c- o>=</c-> <c- ow>new</c-> URL<c- p>(</c->dirty<c- p>,</c-> document<c- p>.</c->baseURI<c- p>);</c->
     <c- k>if</c-> <c- p>(</c->APPLICATION_CONFIG<c- p>.</c->scriptOrigins<c- p>.</c->includes<c- p>(</c->u<c- p>.</c->origin<c- p>))</c-> <c- p>{</c->
       <c- k>return</c-> u<c- p>.</c->href<c- p>;</c->
     <c- p>}</c->
-    <c- k>throw</c-> <c- k>new</c-> Error<c- p>(</c-><c- t>'Cannot load scripts from this origin'</c-><c- p>);</c->
+    <c- k>throw</c-> <c- ow>new</c-> <c- ne>Error</c-><c- p>(</c-><c- t>'Cannot load scripts from this origin'</c-><c- p>);</c->
   <c- p>},</c->
 <c- p>});</c->
 
@@ -1409,11 +1410,11 @@ scriptElement<c- p>.</c->src <c- o>=</c-> myPolicy<c- p>.</c->createScriptURL<c-
         <div class="support">
          <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
          <hr>
-         <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+         <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
          <hr>
-         <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+         <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
          <hr>
-         <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+         <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
         </div>
        </div>
       </div>
@@ -1443,11 +1444,11 @@ trustedTypes<c- p>.</c->isHTML<c- p>(</c-><c- u>"&lt;div>plain string&lt;/div>"<
         <div class="support">
          <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
          <hr>
-         <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+         <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
          <hr>
-         <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+         <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
          <hr>
-         <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+         <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
         </div>
        </div>
       </div>
@@ -1463,11 +1464,11 @@ trustedTypes<c- p>.</c->isHTML<c- p>(</c-><c- u>"&lt;div>plain string&lt;/div>"<
         <div class="support">
          <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
          <hr>
-         <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+         <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
          <hr>
-         <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+         <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
          <hr>
-         <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+         <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
         </div>
        </div>
       </div>
@@ -1483,11 +1484,11 @@ trustedTypes<c- p>.</c->isHTML<c- p>(</c-><c- u>"&lt;div>plain string&lt;/div>"<
         <div class="support">
          <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
          <hr>
-         <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+         <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
          <hr>
-         <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+         <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
          <hr>
-         <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+         <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
         </div>
        </div>
       </div>
@@ -1525,11 +1526,11 @@ trustedTypes<c- p>.</c->getPropertyType<c- p>(</c-><c- t>'foo'</c-><c- p>,</c-> 
         <div class="support">
          <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
          <hr>
-         <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+         <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
          <hr>
-         <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+         <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
          <hr>
-         <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+         <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
         </div>
        </div>
       </div>
@@ -1561,7 +1562,7 @@ stringified <code class="idl"><a data-link-type="idl" href="#StringContext" id="
       </ol>
       <div class="example" id="get-attribute-type-example">
        <a class="self-link" href="#get-attribute-type-example"></a> 
-<pre class="highlight">trustedTypes<c- p>.</c->getAttributeType<c- p>(</c-><c- t>'script'</c-><c- p>,</c-> <c- t>'SRC'</c-><c- p>);</c-> <c- c1>// "TrustedScriptURL"</c->
+<pre class="highlight">trustedTypes<c- p>.</c->getAttributeType<c- p>(</c-><c- t>'script'</c-><c- p>,</c-> <c- t>'src'</c-><c- p>);</c-> <c- c1>// "TrustedScriptURL"</c->
 trustedTypes<c- p>.</c->getAttributeType<c- p>(</c-><c- t>'foo'</c-><c- p>,</c-> <c- t>'bar'</c-><c- p>);</c-> <c- c1>// null</c->
 </pre>
       </div>
@@ -1578,11 +1579,11 @@ trustedTypes<c- p>.</c->getAttributeType<c- p>(</c-><c- t>'foo'</c-><c- p>,</c->
         <div class="support">
          <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
          <hr>
-         <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+         <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
          <hr>
-         <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+         <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
          <hr>
-         <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+         <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
         </div>
        </div>
       </div>
@@ -1605,11 +1606,11 @@ trustedTypes<c- p>.</c->getAttributeType<c- p>(</c-><c- t>'foo'</c-><c- p>,</c->
         <div class="support">
          <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
          <hr>
-         <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+         <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
          <hr>
-         <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+         <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
          <hr>
-         <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+         <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
         </div>
        </div>
       </div>
@@ -1639,11 +1640,11 @@ eval<c- p>(</c->supportsTS <c- o>?</c-> myTrustedScriptObj <c- o>:</c-> myTruste
         <div class="support">
          <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
          <hr>
-         <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+         <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
          <hr>
-         <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+         <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
          <hr>
-         <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+         <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
         </div>
        </div>
       </div>
@@ -1668,11 +1669,11 @@ trustedTypes<c- p>.</c->defaultPolicy <c- o>===</c-> dp<c- p>;</c->  <c- c1>// t
      <div class="support">
       <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
       <hr>
-      <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+      <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
       <hr>
-      <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+      <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
       <hr>
-      <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+      <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
      </div>
     </div>
    </div>
@@ -1688,11 +1689,11 @@ throws a TypeError if a conversion of a given value is disallowed.</p>
      <div class="support">
       <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
       <hr>
-      <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+      <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
       <hr>
-      <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+      <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
       <hr>
-      <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+      <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
      </div>
     </div>
    </div>
@@ -1717,11 +1718,11 @@ throws a TypeError if a conversion of a given value is disallowed.</p>
         <div class="support">
          <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
          <hr>
-         <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+         <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
          <hr>
-         <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+         <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
          <hr>
-         <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+         <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
         </div>
        </div>
       </div>
@@ -1749,11 +1750,11 @@ following arguments:</p>
         <div class="support">
          <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
          <hr>
-         <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+         <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
          <hr>
-         <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+         <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
          <hr>
-         <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+         <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
         </div>
        </div>
       </div>
@@ -1781,11 +1782,11 @@ following arguments:</p>
         <div class="support">
          <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
          <hr>
-         <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+         <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
          <hr>
-         <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+         <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
          <hr>
-         <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+         <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
         </div>
        </div>
       </div>
@@ -1823,8 +1824,8 @@ values into trusted values. These functions do not create <a data-link-type="dfn
    <p>One of the policies, the policy with a <a data-link-type="dfn" href="#trustedtypepolicy-name" id="ref-for-trustedtypepolicy-name">name</a> <code>"default"</code>, is special;
 When an <a data-link-type="dfn" href="#injection-sink" id="ref-for-injection-sink①③">injection sink</a> is passed a string (instead of a
 Trusted Type object), this policy will be implicitly called by
-the user agent with the string value as the first argument, and the sink name
-as a second argument.</p>
+the user agent with the non trusted string value, Trusted Type of the sink and
+the sink type, respectively.</p>
    <p>This allows the application to define a fallback behavior to use instead of
 causing a violation. The intention is to allow the applications to recover from
 an unexpected data flow, and sanitize the
@@ -1851,9 +1852,9 @@ the default policy is applied.</p>
 <pre class="highlight"><c- c1>// Content-Security-Policy: trusted-types default; require-trusted-types-for 'script'</c->
 
 trustedTypes<c- p>.</c->createPolicy<c- p>(</c-><c- t>'default'</c-><c- p>,</c-> <c- p>{</c->
-  createScriptURL<c- o>:</c-> <c- p>(</c->s<c- p>,</c-> type<c- p>,</c-> sink<c- p>)</c-> <c- p>=></c-> <c- p>{</c->
+  createScriptURL<c- o>:</c-> <c- p>(</c->value<c- p>,</c-> type<c- p>,</c-> sink<c- p>)</c-> <c- p>=></c-> <c- p>{</c->
     console<c- p>.</c->log<c- p>(</c-><c- u>"Please refactor."</c-><c- p>);</c->
-    <c- k>return</c-> s <c- o>+</c-> <c- t>'?default-policy-used&amp;type='</c-> <c- o>+</c-> encodeURIComponent<c- p>(</c->type<c- p>)</c-> <c- o>+</c->
+    <c- k>return</c-> value <c- o>+</c-> <c- t>'?default-policy-used&amp;type='</c-> <c- o>+</c-> encodeURIComponent<c- p>(</c->type<c- p>)</c-> <c- o>+</c->
           <c- t>'&amp;sink='</c-> <c- o>+</c-> encodeURIComponent<c- p>(</c->sink<c- p>);</c->
   <c- p>}</c->
 <c- p>});</c->
@@ -1876,7 +1877,7 @@ the user agent needs to enforce them i.e. assert that the injection sinks from a
 may control this enforcing behavior.</p>
    <p>Authors may also control their <a data-link-type="dfn" href="#policies" id="ref-for-policies③">policies</a> by specifying rules around policy creation.</p>
    <h4 class="heading settled" data-level="2.4.1" id="content-security-policy-hdr"><span class="secno">2.4.1. </span><span class="content">Content Security Policy</span><a class="self-link" href="#content-security-policy-hdr"></a></h4>
-   <p>Applications may control Trusted Type enforcement via <a href="https://www.w3.org/TR/CSP3/#policy-delivery">configuring a Content Security Policy</a>. This document defines new directives that correspond to Trusted Types rules.
+   <p>Applications may control Trusted Type enforcement via <a href="https://w3c.github.io/webappsec-csp/#policy-delivery">configuring a Content Security Policy</a>. This document defines new directives that correspond to Trusted Types rules.
 The <a data-link-type="dfn" href="#require-trusted-types-for-directive" id="ref-for-require-trusted-types-for-directive">require-trusted-types-for</a> directive specifies the <a data-link-type="dfn" href="#injection-sink" id="ref-for-injection-sink①⑧">injection sinks</a> groups, for which the types should be required. The <a href="#trusted-types-csp-directive">trusted-types</a> directive controls how <a data-link-type="dfn" href="#policies" id="ref-for-policies④">policies</a> can be created.</p>
    <p class="note" role="note"><span>Note:</span> Using CSP mechanisms allows the authors to prepare their application for enforcing Trusted Types
 via using the <a data-link-type="http-header" href="https://w3c.github.io/webappsec-csp/#header-content-security-policy-report-only" id="ref-for-header-content-security-policy-report-only">Content-Security-Policy-Report-Only</a> HTTP Response header.</p>
@@ -2221,299 +2222,56 @@ as in their original counterparts, apart from additional behavior triggered by t
    <p>On setting, the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/dom.html#dom-innertext" id="ref-for-dom-innertext①">innerText</a></code>, <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#dom-node-textcontent" id="ref-for-dom-node-textcontent①">textContent</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-htmlscriptelement-text" id="ref-for-dom-htmlscriptelement-text①">text</a></code> IDL attributes perform the regular steps, and then set <code class="idl"><a data-link-type="idl" href="#dom-htmlscriptelement-scripttext-slot" id="ref-for-dom-htmlscriptelement-scripttext-slot②">[[ScriptText]]</a></code> internal slot value with the stringified value.</p>
    <p>On setting, the <code class="idl"><a data-link-type="idl" href="#dom-htmlscriptelement-src" id="ref-for-dom-htmlscriptelement-src②">src</a></code> IDL attribute performs the usual steps, and then sets <code class="idl"><a data-link-type="idl" href="#dom-htmlscriptelement-scripturl-slot" id="ref-for-dom-htmlscriptelement-scripturl-slot④">[[ScriptURL]]</a></code> internal slot value to its <code><a data-link-type="element-sub" href="https://html.spec.whatwg.org/multipage/scripting.html#attr-script-src" id="ref-for-attr-script-src③">src</a></code> content attribute value.</p>
    <h5 class="heading settled" data-level="4.3.3.3" id="slot-value-verification"><span class="secno">4.3.3.3. </span><span class="content">Slot value verification</span><a class="self-link" href="#slot-value-verification"></a></h5>
-   <p>The <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/scripting.html#prepare-a-script" id="ref-for-prepare-a-script">prepare a script</a> algorithm is modified as follows:</p>
+   <p>The first few steps of the <a data-link-type="dfn" href="https://html.spec.whatwg.org/#prepare-the-script-element" id="ref-for-prepare-the-script-element">prepare the script element</a> algorithm are modified as follows:</p>
    <ol>
     <li>
-     <p>If the <code id="script-processing-model:the-script-element-18"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element is marked as having <a href="https://html.spec.whatwg.org/#already-started" id="script-processing-model:already-started">"already started"</a>, then
-    return. The script is not executed.</p>
+     <p>If <var>el</var>’s <a href="https://html.spec.whatwg.org/#already-started" id="script-processing-model:already-started-3">already started</a> is true, then return. </p>
     <li>
-     <p>If the element has its <a href="https://html.spec.whatwg.org/#parser-inserted" id="script-processing-model:parser-inserted-3">"parser-inserted"</a> flag set, then set <var>was-parser-inserted</var> to true and unset the element’s <a href="https://html.spec.whatwg.org/#parser-inserted" id="script-processing-model:parser-inserted-4">"parser-inserted"</a> flag. Otherwise, set <var>was-parser-inserted</var> to
-    false.</p>
-     <p class="note" role="note">This is done so that if parser-inserted <code id="script-processing-model:the-script-element-19"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> elements fail to run
+     <p>Let <var>parser document</var> be <var>el</var>’s <a href="https://html.spec.whatwg.org/#parser-document" id="script-processing-model:parser-document-2">parser document</a>. </p>
+    <li>
+     <p>Set <var>el</var>’s <a href="https://html.spec.whatwg.org/#parser-document" id="script-processing-model:parser-document-3">parser document</a> to null.</p>
+     <p class="note" role="note">This is done so that if parser-inserted <code id="script-processing-model:the-script-element-27"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> elements fail to run
     when the parser tries to run them, e.g. because they are empty or specify an unsupported
     scripting language, another script can later mutate them and cause them to run again.</p>
     <li>
-     <p>If <var>was-parser-inserted</var> is true and the element does not have an <code id="script-processing-model:attr-script-async-2"><a href="https://html.spec.whatwg.org/#attr-script-async">async</a></code> attribute, then set the element’s <a href="https://html.spec.whatwg.org/#non-blocking" id="script-processing-model:non-blocking-3">"non-blocking"</a> flag to true.</p>
-     <p class="note" role="note">This is done so that if a parser-inserted <code id="script-processing-model:the-script-element-20"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element fails to
-    run when the parser tries to run it, but it is later executed after a script dynamically updates
-    it, it will execute in a non-blocking fashion even if the <code id="script-processing-model:attr-script-async-3"><a href="https://html.spec.whatwg.org/#attr-script-async">async</a></code> attribute isn’t set.</p>
-    <li>
-     <ins>Execute the <a data-link-type="abstract-op" href="#abstract-opdef-prepare-the-script-url-and-text" id="ref-for-abstract-opdef-prepare-the-script-url-and-text">Prepare the script URL and text</a> algorithm upon the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/scripting.html#htmlscriptelement" id="ref-for-htmlscriptelement⑤">HTMLScriptElement</a></code>. If that algorithm threw an error, then return. The script is not executed. </ins>
-    <li>
-     <p>
-      Let <var>source text</var> be the element’s 
-      <del><a data-x-internal="child-text-content" href="https://dom.spec.whatwg.org/#concept-child-text-content" id="script-processing-model:child-text-content">child text content</a></del>
-      <ins><code>[[ScriptText]]</code> internal slot value</ins>
-      .
-     </p>
+     <p>If <var>parser document</var> is non-null and <var>el</var> does not have an <code id="script-processing-model:attr-script-async-4"><a href="https://html.spec.whatwg.org/#attr-script-async">async</a></code> attribute, then set <var>el</var>’s <a href="https://html.spec.whatwg.org/#script-force-async" id="script-processing-model:script-force-async-2">force async</a> to true.</p>
+     <p class="note" role="note">This is done so that if a parser-inserted <code id="script-processing-model:the-script-element-28"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element fails to
+    run when the parser tries to run it, but it is later executed after a script dynamically
+    updates it, it will execute in an async fashion even if the <code id="script-processing-model:attr-script-async-5"><a href="https://html.spec.whatwg.org/#attr-script-async">async</a></code> attribute isn’t set.</p>
     <li>
      <ins>
-      <p>Let <var>src</var> be the element’s <code>[[ScriptURL]]</code> internal slot value.</p>
+      <p>Execute the <a data-link-type="abstract-op" href="#abstract-opdef-prepare-the-script-url-and-text" id="ref-for-abstract-opdef-prepare-the-script-url-and-text">Prepare the script URL and text</a> algorithm on <var>el</var>. If that algorithm threw an error, then return.</p>
      </ins>
-    <li id="script-processing-empty">
-     <a class="self-link" href="#script-processing-empty"></a> 
+    <li>
      <p>
-      If 
-      <del>the element has no <code id="script-processing-model:attr-script-src-3"><a href="https://html.spec.whatwg.org/#attr-script-src">src</a></code> attribute</del>
-      <ins><var>src</var> is null</ins>
-      , and <var>source
-    text</var> is the empty string, then return. The script is not executed.
+      Let <var>source text</var> be <var>el</var>’s 
+      <del><a data-x-internal="child-text-content" href="https://dom.spec.whatwg.org/#concept-child-text-content" id="script-processing-model:child-text-content">child text content</a>.</del>
+      <ins><code>[[ScriptText]]</code> internal slot value.</ins>
      </p>
-    <li>
-     <p>If the element is not <a data-x-internal="connected" href="https://dom.spec.whatwg.org/#connected" id="script-processing-model:connected-3">connected</a>, then return. The script is not
-   executed.</p>
-    <li id="script-processing-prepare">
-     <a class="self-link" href="#script-processing-prepare"></a> 
-     <p>If either:</p>
-     <ul class="brief">
-      <li>the <code id="script-processing-model:the-script-element-21"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element has a <code id="script-processing-model:attr-script-type-2"><a href="https://html.spec.whatwg.org/#attr-script-type">type</a></code> attribute
-     and its value is the empty string, or
-      <li>the <code id="script-processing-model:the-script-element-22"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element has no <code id="script-processing-model:attr-script-type-3"><a href="https://html.spec.whatwg.org/#attr-script-type">type</a></code> attribute
-     but it has a <code id="script-processing-model:attr-script-language"><a href="https://html.spec.whatwg.org/#attr-script-language">language</a></code> attribute and <em>that</em> attribute’s value is the empty string, or
-      <li>the <code id="script-processing-model:the-script-element-23"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element has neither a <code id="script-processing-model:attr-script-type-4"><a href="https://html.spec.whatwg.org/#attr-script-type">type</a></code> attribute nor a <code id="script-processing-model:attr-script-language-2"><a href="https://html.spec.whatwg.org/#attr-script-language">language</a></code> attribute, then
-     </ul>
-     <p>...let <var>the script block’s type string</var> for this <code id="script-processing-model:the-script-element-24"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element be
-    "<code>text/javascript</code>".</p>
-     <p>Otherwise, if the <code id="script-processing-model:the-script-element-25"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element has a <code id="script-processing-model:attr-script-type-5"><a href="https://html.spec.whatwg.org/#attr-script-type">type</a></code> attribute, let <var>the script block’s type string</var> for this <code id="script-processing-model:the-script-element-26"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element be the value of that attribute with <a data-x-internal="strip-leading-and-trailing-ascii-whitespace" href="https://infra.spec.whatwg.org/#strip-leading-and-trailing-ascii-whitespace" id="script-processing-model:strip-leading-and-trailing-ascii-whitespace">leading and trailing ASCII whitespace
-    stripped</a>.</p>
-     <p>Otherwise, the element has a non-empty <code id="script-processing-model:attr-script-language-3"><a href="https://html.spec.whatwg.org/#attr-script-language">language</a></code> attribute; let <var>the script block’s type string</var> for this <code id="script-processing-model:the-script-element-27"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element
-    be the concatenation of the string "<code>text/</code>" followed by the value of the <code id="script-processing-model:attr-script-language-4"><a href="https://html.spec.whatwg.org/#attr-script-language">language</a></code> attribute.</p>
-     <p class="note" role="note">The <code id="script-processing-model:attr-script-language-5"><a href="https://html.spec.whatwg.org/#attr-script-language">language</a></code> attribute is never
-    conforming, and is always ignored if there is a <code id="script-processing-model:attr-script-type-6"><a href="https://html.spec.whatwg.org/#attr-script-type">type</a></code> attribute present.</p>
-     <p>Determine <a href="https://html.spec.whatwg.org/#concept-script-type" id="script-processing-model:concept-script-type">the script’s type</a> as follows:</p>
-     <ul>
-      <li>If <var>the script block’s type string</var> is a <a data-x-internal="javascript-mime-type-essence-match" href="https://mimesniff.spec.whatwg.org/#javascript-mime-type-essence-match" id="script-processing-model:javascript-mime-type-essence-match">JavaScript MIME type essence
-     match</a>, <a href="https://html.spec.whatwg.org/#concept-script-type" id="script-processing-model:concept-script-type-2">the script’s type</a> is "<code>classic</code>".
-      <li>If <var>the script block’s type string</var> is an <a data-x-internal="ascii-case-insensitive" href="https://infra.spec.whatwg.org/#ascii-case-insensitive" id="script-processing-model:ascii-case-insensitive">ASCII case-insensitive</a> match for the string "<code>module</code>", <a href="https://html.spec.whatwg.org/#concept-script-type" id="script-processing-model:concept-script-type-3">the
-     script’s type</a> is "<code>module</code>".
-      <li>If neither of the above conditions are true, then return. No script is executed.
-     </ul>
-    <li>
-     <p>If <var>was-parser-inserted</var> is true, then flag the element as <a href="https://html.spec.whatwg.org/#parser-inserted" id="script-processing-model:parser-inserted-5">"parser-inserted"</a> again, and set the element’s <a href="https://html.spec.whatwg.org/#non-blocking" id="script-processing-model:non-blocking-4">"non-blocking"</a> flag to
-    false.</p>
-    <li id="script-processing-start">
-     <a class="self-link" href="#script-processing-start"></a> 
-     <p>Set the element’s <a href="https://html.spec.whatwg.org/#already-started" id="script-processing-model:already-started-2">"already started"</a> flag.</p>
-    <li>
-     <p>If the element is flagged as <a href="https://html.spec.whatwg.org/#parser-inserted" id="script-processing-model:parser-inserted-6">"parser-inserted"</a>, but the element’s <a data-x-internal="node-document" href="https://dom.spec.whatwg.org/#concept-node-document" id="script-processing-model:node-document-2">node document</a> is not the <code id="script-processing-model:document"><a href="https://html.spec.whatwg.org/#document">Document</a></code> of the parser that created the
-    element, then return.</p>
-    <li id="script-processing-noscript">
-     <a class="self-link" href="#script-processing-noscript"></a> 
-     <p>If <a href="https://html.spec.whatwg.org/#concept-n-noscript" id="script-processing-model:concept-n-noscript">scripting is disabled</a> for the <code id="script-processing-model:the-script-element-28"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element, then return. The script is not executed.</p>
-     <p class="note" role="note">The definition of <a href="https://html.spec.whatwg.org/#concept-n-noscript" id="script-processing-model:concept-n-noscript-2">scripting is disabled</a> means that, amongst others, the following scripts will not execute: scripts in <code id="script-processing-model:xmlhttprequest"><a data-x-internal="xmlhttprequest" href="https://xhr.spec.whatwg.org/#xmlhttprequest">XMLHttpRequest</a></code>’s <code id="script-processing-model:dom-xmlhttprequest-responsexml"><a data-x-internal="dom-xmlhttprequest-responsexml" href="https://xhr.spec.whatwg.org/#dom-xmlhttprequest-responsexml">responseXML</a></code> documents, scripts in <code id="script-processing-model:domparser"><a data-x-internal="domparser" href="https://w3c.github.io/DOM-Parsing/#the-domparser-interface">DOMParser</a></code>-created documents, scripts in documents created by <code id="script-processing-model:xsltprocessor"><a href="https://html.spec.whatwg.org/#xsltprocessor">XSLTProcessor</a></code>’s <code id="script-processing-model:dom-xsltprocessor-transformtodocument"><a href="https://html.spec.whatwg.org/#dom-xsltprocessor-transformtodocument">transformToDocument</a></code> feature, and scripts
-    that are first inserted by a script into a <code id="script-processing-model:document-2"><a href="https://html.spec.whatwg.org/#document">Document</a></code> that was created using the <code id="script-processing-model:dom-domimplementation-createdocument"><a data-x-internal="dom-domimplementation-createdocument" href="https://dom.spec.whatwg.org/#dom-domimplementation-createdocument">createDocument()</a></code> API. <a href="https://html.spec.whatwg.org/#refsXHR">\[XHR\]</a> <a href="https://html.spec.whatwg.org/#refsDOMPARSING">\[DOMPARSING\]</a> <a href="https://html.spec.whatwg.org/#refsXSLTP">\[XSLTP\]</a> <a href="https://html.spec.whatwg.org/#refsDOM">\[DOM\]</a></p>
-    <li>
-     <p>If the <code id="script-processing-model:the-script-element-29"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element has a <code id="script-processing-model:attr-script-nomodule"><a href="https://html.spec.whatwg.org/#attr-script-nomodule">nomodule</a></code> content attribute and <a href="https://html.spec.whatwg.org/#concept-script-type" id="script-processing-model:concept-script-type-4">the script’s type</a> is "<code>classic</code>", then return. The script is not executed.</p>
-     <p class="note" role="note">This means specifying <code id="script-processing-model:attr-script-nomodule-2"><a href="https://html.spec.whatwg.org/#attr-script-nomodule">nomodule</a></code> on a <a href="https://html.spec.whatwg.org/#module-script" id="script-processing-model:module-script">module script</a> has no effect; the algorithm continues onward.</p>
-    <li id="script-processing-csp">
-     <a class="self-link" href="#script-processing-csp"></a>
-     <p>
-      If 
-      <del>the <code id="script-processing-model:the-script-element-30"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element does not have a <code id="script-processing-model:attr-script-src-4"><a href="https://html.spec.whatwg.org/#attr-script-src">src</a></code> content attribute</del>
-      <ins><var>src</var> is null</ins>
-      , and the <a data-x-internal="should-element’s-inline-behavior-be-blocked-by-content-security-policy" href="https://w3c.github.io/webappsec-csp/#should-block-inline" id="script-processing-model:should-element’s-inline-behavior-be-blocked-by-content-security-policy">Should element’s inline
-   behavior be blocked by Content Security Policy?</a> algorithm returns "<code>Blocked</code>" when executed upon the <code id="script-processing-model:the-script-element-31"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element, "<code>script</code>", and <var>source text</var>, then return. The script is not executed. <a href="https://html.spec.whatwg.org/#refsCSP">\[CSP\]</a>
-     </p>
-    <li id="script-processing-for">
-     <a class="self-link" href="#script-processing-for"></a> 
-     <p>If the <code id="script-processing-model:the-script-element-32"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element has an <code id="script-processing-model:attr-script-event"><a href="https://html.spec.whatwg.org/#attr-script-event">event</a></code> attribute and a <code id="script-processing-model:attr-script-for"><a href="https://html.spec.whatwg.org/#attr-script-for">for</a></code> attribute, and <a href="https://html.spec.whatwg.org/#concept-script-type" id="script-processing-model:concept-script-type-5">the script’s type</a> is "<code>classic</code>",
-    then:</p>
-     <ol>
-      <li>
-       <p>Let <var>for</var> be the value of the <code id="script-processing-model:attr-script-for-2"><a href="https://html.spec.whatwg.org/#attr-script-for">for</a></code> attribute.</p>
-      <li>
-       <p>Let <var>event</var> be the value of the <code id="script-processing-model:attr-script-event-2"><a href="https://html.spec.whatwg.org/#attr-script-event">event</a></code> attribute.</p>
-      <li>
-       <p><a data-x-internal="strip-leading-and-trailing-ascii-whitespace" href="https://infra.spec.whatwg.org/#strip-leading-and-trailing-ascii-whitespace" id="script-processing-model:strip-leading-and-trailing-ascii-whitespace-2">Strip leading and trailing ASCII whitespace</a> from <var>event</var> and <var>for</var>.</p>
-      <li>
-       <p>If <var>for</var> is not an <a data-x-internal="ascii-case-insensitive" href="https://infra.spec.whatwg.org/#ascii-case-insensitive" id="script-processing-model:ascii-case-insensitive-2">ASCII case-insensitive</a> match for the
-     string "<code>window</code>", then return. The script is not executed.</p>
-      <li>
-       <p>If <var>event</var> is not an <a data-x-internal="ascii-case-insensitive" href="https://infra.spec.whatwg.org/#ascii-case-insensitive" id="script-processing-model:ascii-case-insensitive-3">ASCII case-insensitive</a> match for
-     either the string "<code>onload</code>" or the string "<code>onload()</code>", then return. The script is not executed.</p>
-     </ol>
-    <li id="script-processing-encoding">
-     <a class="self-link" href="#script-processing-encoding"></a> 
-     <p>If the <code id="script-processing-model:the-script-element-33"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element has a <code id="script-processing-model:attr-script-charset"><a href="https://html.spec.whatwg.org/#attr-script-charset">charset</a></code> attribute, then let <var>encoding</var> be the result of <a data-x-internal="getting-an-encoding" href="https://encoding.spec.whatwg.org/#concept-encoding-get" id="script-processing-model:getting-an-encoding">getting an encoding</a> from
-    the value of the <code id="script-processing-model:attr-script-charset-2"><a href="https://html.spec.whatwg.org/#attr-script-charset">charset</a></code> attribute.</p>
-     <p>If the <code id="script-processing-model:the-script-element-34"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element does not have a <code id="script-processing-model:attr-script-charset-3"><a href="https://html.spec.whatwg.org/#attr-script-charset">charset</a></code> attribute, or if <a data-x-internal="getting-an-encoding" href="https://encoding.spec.whatwg.org/#concept-encoding-get" id="script-processing-model:getting-an-encoding-2">getting an encoding</a> failed, let <var>encoding</var> be the same as <a data-x-internal="document’s-character-encoding" href="https://dom.spec.whatwg.org/#concept-document-encoding" id="script-processing-model:document’s-character-encoding">the
-    encoding</a> of the <code id="script-processing-model:the-script-element-35"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element’s <a data-x-internal="node-document" href="https://dom.spec.whatwg.org/#concept-node-document" id="script-processing-model:node-document-3">node document</a>.</p>
-     <p class="note" role="note">If <a href="https://html.spec.whatwg.org/#concept-script-type" id="script-processing-model:concept-script-type-6">the script’s type</a> is "<code>module</code>", this encoding will be ignored.</p>
-    <li>
-     <p>Let <var>classic script CORS setting</var> be the current state of the element’s <code id="script-processing-model:attr-script-crossorigin"><a href="https://html.spec.whatwg.org/#attr-script-crossorigin">crossorigin</a></code> content attribute.</p>
-    <li>
-     <p>Let <var>module script credentials mode</var> be the <a href="https://html.spec.whatwg.org/#module-script-credentials-mode" id="script-processing-model:module-script-credentials-mode">module script credentials
-   mode</a> for the element’s <code id="script-processing-model:attr-script-crossorigin-2"><a href="https://html.spec.whatwg.org/#attr-script-crossorigin">crossorigin</a></code> content
-   attribute.</p>
-    <li>
-     <p>Let <var>cryptographic nonce</var> be the element’s <a href="https://html.spec.whatwg.org/#cryptographicnonce" id="script-processing-model:cryptographicnonce">\[\[CryptographicNonce\]\]</a> internal slot’s value.</p>
-    <li>
-     <p>If the <code id="script-processing-model:the-script-element-36"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element has an <code id="script-processing-model:attr-script-integrity"><a href="https://html.spec.whatwg.org/#attr-script-integrity">integrity</a></code> attribute, then let <var>integrity
-    metadata</var> be that attribute’s value.</p>
-     <p>Otherwise, let <var>integrity metadata</var> be the empty string.</p>
-    <li>
-     <p>Let <var>referrer policy</var> be the current state of the element’s <code id="script-processing-model:attr-script-referrerpolicy"><a href="https://html.spec.whatwg.org/#attr-script-referrerpolicy">referrerpolicy</a></code> content attribute.</p>
-    <li>
-     <p>Let <var>parser metadata</var> be "<code>parser-inserted</code>" if the <code id="script-processing-model:the-script-element-37"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element has been flagged as <a href="https://html.spec.whatwg.org/#parser-inserted" id="script-processing-model:parser-inserted-7">"parser-inserted"</a>, and
-   "<code>not-parser-inserted</code>" otherwise.</p>
-    <li>
-     <p>Let <var>options</var> be a <a href="https://html.spec.whatwg.org/#script-fetch-options" id="script-processing-model:script-fetch-options">script fetch options</a> whose <a href="https://html.spec.whatwg.org/#concept-script-fetch-options-nonce" id="script-processing-model:concept-script-fetch-options-nonce">cryptographic nonce</a> is <var>cryptographic
-   nonce</var>, <a href="https://html.spec.whatwg.org/#concept-script-fetch-options-integrity" id="script-processing-model:concept-script-fetch-options-integrity">integrity metadata</a> is <var>integrity metadata</var>, <a href="https://html.spec.whatwg.org/#concept-script-fetch-options-parser" id="script-processing-model:concept-script-fetch-options-parser">parser
-   metadata</a> is <var>parser metadata</var>, <a href="https://html.spec.whatwg.org/#concept-script-fetch-options-credentials" id="script-processing-model:concept-script-fetch-options-credentials">credentials mode</a> is <var>module script
-   credentials mode</var>, and <a href="https://html.spec.whatwg.org/#concept-script-fetch-options-referrer-policy" id="script-processing-model:concept-script-fetch-options-referrer-policy">referrer
-   policy</a> is <var>referrer policy</var>.</p>
-    <li>
-     <p>Let <var>settings object</var> be the element’s <a data-x-internal="node-document" href="https://dom.spec.whatwg.org/#concept-node-document" id="script-processing-model:node-document-4">node document</a>’s <a href="https://html.spec.whatwg.org/#relevant-settings-object" id="script-processing-model:relevant-settings-object">relevant settings object</a>.</p>
-    <li id="script-processing-src-prepare">
-     <a class="self-link" href="#script-processing-src-prepare"></a> 
-     <p>
-      If 
-      <del>the element has a <code id="script-processing-model:attr-script-src-5"><a href="https://html.spec.whatwg.org/#attr-script-src">src</a></code> content attribute</del>
-      <ins><var>src</var> is not null</ins>
-      , then:
-     </p>
-     <ol>
-      <li>
-       <del>
-        <p>Let <var>src</var> be the value of the element’s <code id="script-processing-model:attr-script-src-6"><a href="https://html.spec.whatwg.org/#attr-script-src">src</a></code> attribute.</p>
-       </del>
-      <li>
-       <p>If <var>src</var> is the empty string, <a href="https://html.spec.whatwg.org/#queue-a-task" id="script-processing-model:queue-a-task">queue a task</a> to <a data-x-internal="concept-event-fire" href="https://dom.spec.whatwg.org/#concept-event-fire" id="script-processing-model:concept-event-fire">fire an event</a> named <code id="script-processing-model:event-error"><a href="https://html.spec.whatwg.org/#event-error">error</a></code> at the element, and return.</p>
-      <li>
-       <p>Set the element’s <a href="https://html.spec.whatwg.org/#concept-script-external" id="script-processing-model:concept-script-external">from an external file</a> flag.</p>
-      <li>
-       <p><a href="https://html.spec.whatwg.org/#parse-a-url" id="script-processing-model:parse-a-url">Parse</a> <var>src</var> relative to the element’s <a data-x-internal="node-document" href="https://dom.spec.whatwg.org/#concept-node-document" id="script-processing-model:node-document-5">node document</a>.</p>
-      <li>
-       <p>If the previous step failed, <a href="https://html.spec.whatwg.org/#queue-a-task" id="script-processing-model:queue-a-task-2">queue a task</a> to <a data-x-internal="concept-event-fire" href="https://dom.spec.whatwg.org/#concept-event-fire" id="script-processing-model:concept-event-fire-2">fire an event</a> named <code id="script-processing-model:event-error-2"><a href="https://html.spec.whatwg.org/#event-error">error</a></code> at the element, and return. Otherwise, let <var>url</var> be the <a href="https://html.spec.whatwg.org/#resulting-url-record" id="script-processing-model:resulting-url-record">resulting URL
-     record</a>.</p>
-      <li>
-       <p>Switch on <a href="https://html.spec.whatwg.org/#concept-script-type" id="script-processing-model:concept-script-type-7">the script’s type</a>:</p>
-       <dl class="switch">
-        <dt>"<code>classic</code>"
-        <dd>
-         <p><a href="https://html.spec.whatwg.org/#fetch-a-classic-script" id="script-processing-model:fetch-a-classic-script">Fetch a classic script</a> given <var>url</var>, <var>settings object</var>, <var>options</var>, <var>classic script CORS setting</var>, and <var>encoding</var>.</p>
-        <dt>"<code>module</code>"
-        <dd>
-         <p><a href="https://html.spec.whatwg.org/#fetch-a-module-script-tree" id="script-processing-model:fetch-a-module-script-tree">Fetch an external module script graph</a> given <var>url</var>, <var>settings
-        object</var>, and <var>options</var>.</p>
-       </dl>
-       <p>When the chosen algorithm asynchronously completes, set <a href="https://html.spec.whatwg.org/#concept-script-script" id="script-processing-model:concept-script-script">the script’s script</a> to the result. At that time, <a href="https://html.spec.whatwg.org/#the-script-is-ready" id="script-processing-model:the-script-is-ready-2">the script is ready</a>.</p>
-       <p>For performance reasons, user agents may start fetching the classic script or module graph
-      (as defined above) as soon as the <code id="script-processing-model:attr-script-src-7"><a href="https://html.spec.whatwg.org/#attr-script-src">src</a></code> attribute is set,
-      instead, in the hope that the element will be inserted into the document (and that the <code id="script-processing-model:attr-script-crossorigin-3"><a href="https://html.spec.whatwg.org/#attr-script-crossorigin">crossorigin</a></code> attribute won’t change value in the
-      meantime). Either way, once the element is <a href="https://html.spec.whatwg.org/#insert-an-element-into-a-document" id="script-processing-model:insert-an-element-into-a-document">inserted into the document</a>, the load must have started as described in this
-      step. If the UA performs such prefetching, but the element is never inserted in the document,
-      or the <code id="script-processing-model:attr-script-src-8"><a href="https://html.spec.whatwg.org/#attr-script-src">src</a></code> attribute is dynamically changed, or the <code id="script-processing-model:attr-script-crossorigin-4"><a href="https://html.spec.whatwg.org/#attr-script-crossorigin">crossorigin</a></code> attribute is dynamically changed, then the
-      user agent will not execute the script so obtained, and the fetching process will have been
-      effectively wasted.</p>
-     </ol>
-    <li id="establish-script-block-source">
-     <a class="self-link" href="#establish-script-block-source"></a> 
-     <p>
-      If 
-      <del>the element does not have a <code id="script-processing-model:attr-script-src-9"><a href="https://html.spec.whatwg.org/#attr-script-src">src</a></code> content attribute</del>
-      <ins><var>src</var> is null</ins>
-      ,
-    run these substeps:
-     </p>
-     <ol>
-      <li>
-       <p>Let <var>base URL</var> be the <code id="script-processing-model:the-script-element-38"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element’s <a data-x-internal="node-document" href="https://dom.spec.whatwg.org/#concept-node-document" id="script-processing-model:node-document-6">node
-     document</a>’s <a href="https://html.spec.whatwg.org/#document-base-url" id="script-processing-model:document-base-url">document base URL</a>.</p>
-      <li>
-       <p>Switch on <a href="https://html.spec.whatwg.org/#concept-script-type" id="script-processing-model:concept-script-type-8">the script’s type</a>:</p>
-       <dl class="switch">
-        <dt>"<code>classic</code>"
-        <dd>
-         <ol>
-          <li>
-           <p>Let <var>script</var> be the result of <a href="https://html.spec.whatwg.org/#creating-a-classic-script" id="script-processing-model:creating-a-classic-script">creating a classic script</a> using <var>source text</var>, <var>settings object</var>, <var>base URL</var>, and <var>options</var>.</p>
-          <li>
-           <p>Set <a href="https://html.spec.whatwg.org/#concept-script-script" id="script-processing-model:concept-script-script-2">the script’s script</a> to <var>script</var>.</p>
-          <li>
-           <p><a href="https://html.spec.whatwg.org/#the-script-is-ready" id="script-processing-model:the-script-is-ready-3">The script is ready</a>.</p>
-         </ol>
-        <dt>"<code>module</code>"
-        <dd>
-         <ol>
-          <li>
-           <p><a href="https://html.spec.whatwg.org/#fetch-an-inline-module-script-graph" id="script-processing-model:fetch-an-inline-module-script-graph">Fetch an inline module script graph</a>, given <var>source text</var>, <var>base URL</var>, <var>settings object</var>, and <var>options</var>. When this
-         asynchronously completes, set <a href="https://html.spec.whatwg.org/#concept-script-script" id="script-processing-model:concept-script-script-3">the script’s
-         script</a> to the result. At that time, <a href="https://html.spec.whatwg.org/#the-script-is-ready" id="script-processing-model:the-script-is-ready-4">the script is ready</a>.</p>
-         </ol>
-       </dl>
-     </ol>
-    <li>
-     <p>Then, follow the first of the following options that describes the situation:</p>
-     <dl class="switch">
-      <dt id="script-processing-defer"><a class="self-link" href="#script-processing-defer"></a>If <a href="https://html.spec.whatwg.org/#concept-script-type" id="script-processing-model:concept-script-type-9">the script’s
-     type</a> is "<code>classic</code>", and the element has a <code id="script-processing-model:attr-script-src-10"><a href="https://html.spec.whatwg.org/#attr-script-src">src</a></code> attribute, and the element has a <code id="script-processing-model:attr-script-defer"><a href="https://html.spec.whatwg.org/#attr-script-defer">defer</a></code> attribute, and the element has been flagged as <a href="https://html.spec.whatwg.org/#parser-inserted" id="script-processing-model:parser-inserted-8">"parser-inserted"</a>, and the element does not have an <code id="script-processing-model:attr-script-async-4"><a href="https://html.spec.whatwg.org/#attr-script-async">async</a></code> attribute
-      <dt id="script-processing-module-noasync-parser-inserted"><a class="self-link" href="#script-processing-module-noasync-parser-inserted"></a>If <a href="https://html.spec.whatwg.org/#concept-script-type" id="script-processing-model:concept-script-type-10">the script’s type</a> is "<code>module</code>", and
-     the element has been flagged as <a href="https://html.spec.whatwg.org/#parser-inserted" id="script-processing-model:parser-inserted-9">"parser-inserted"</a>, and the element does not have
-     an <code id="script-processing-model:attr-script-async-5"><a href="https://html.spec.whatwg.org/#attr-script-async">async</a></code> attribute
-      <dd>
-       <p>Add the element to the end of the <dfn data-dfn-type="dfn" data-lt="list of scripts that will execute when the document has finished parsing" data-noexport id="list-of-scripts-that-will-execute-when-the-document-has-finished-parsing">list of scripts that will execute when the document
-      has finished parsing<a class="self-link" href="#list-of-scripts-that-will-execute-when-the-document-has-finished-parsing"></a></dfn> associated with the <code id="script-processing-model:document-3"><a href="https://html.spec.whatwg.org/#document">Document</a></code> of the parser that
-      created the element.</p>
-       <p>When <a href="https://html.spec.whatwg.org/#the-script-is-ready" id="script-processing-model:the-script-is-ready-5">the script is ready</a>, set the element’s <a href="https://html.spec.whatwg.org/#ready-to-be-parser-executed" id="script-processing-model:ready-to-be-parser-executed">"ready to be
-      parser-executed"</a> flag. The parser will handle executing the script.</p>
-      <dt id="script-processing-parser-inserted"><a class="self-link" href="#script-processing-parser-inserted"></a>If <a href="https://html.spec.whatwg.org/#concept-script-type" id="script-processing-model:concept-script-type-11">the script’s
-     type</a> is "<code>classic</code>", and the element has a <code id="script-processing-model:attr-script-src-11"><a href="https://html.spec.whatwg.org/#attr-script-src">src</a></code> attribute, and the element has been flagged as <a href="https://html.spec.whatwg.org/#parser-inserted" id="script-processing-model:parser-inserted-10">"parser-inserted"</a>, and the element does not have an <code id="script-processing-model:attr-script-async-6"><a href="https://html.spec.whatwg.org/#attr-script-async">async</a></code> attribute
-      <dd>
-       <p>The element is the <a href="https://html.spec.whatwg.org/#pending-parsing-blocking-script" id="script-processing-model:pending-parsing-blocking-script">pending parsing-blocking script</a> of the <code id="script-processing-model:document-4"><a href="https://html.spec.whatwg.org/#document">Document</a></code> of the parser that created the element. (There can only be one such
-      script per <code id="script-processing-model:document-5"><a href="https://html.spec.whatwg.org/#document">Document</a></code> at a time.)</p>
-       <p>When <a href="https://html.spec.whatwg.org/#the-script-is-ready" id="script-processing-model:the-script-is-ready-6">the script is ready</a>, set the element’s <a href="https://html.spec.whatwg.org/#ready-to-be-parser-executed" id="script-processing-model:ready-to-be-parser-executed-2">"ready to be
-      parser-executed"</a> flag. The parser will handle executing the script.</p>
-      <dt id="script-processing-src-sync"><a class="self-link" href="#script-processing-src-sync"></a>If <a href="https://html.spec.whatwg.org/#concept-script-type" id="script-processing-model:concept-script-type-12">the script’s
-     type</a> is "<code>classic</code>", and the element has a <code id="script-processing-model:attr-script-src-12"><a href="https://html.spec.whatwg.org/#attr-script-src">src</a></code> attribute, and the element does not have an <code id="script-processing-model:attr-script-async-7"><a href="https://html.spec.whatwg.org/#attr-script-async">async</a></code> attribute, and the element does not have the <a href="https://html.spec.whatwg.org/#non-blocking" id="script-processing-model:non-blocking-5">"non-blocking"</a> flag set
-      <dt id="script-processing-module-noasync"><a class="self-link" href="#script-processing-module-noasync"></a>If <a href="https://html.spec.whatwg.org/#concept-script-type" id="script-processing-model:concept-script-type-13">the script’s
-     type</a> is "<code>module</code>", and the element does not have an <code id="script-processing-model:attr-script-async-8"><a href="https://html.spec.whatwg.org/#attr-script-async">async</a></code> attribute, and the element does not have the <a href="https://html.spec.whatwg.org/#non-blocking" id="script-processing-model:non-blocking-6">"non-blocking"</a> flag set
-      <dd>
-       <p>Add the element to the end of the <dfn data-dfn-type="dfn" data-lt="list of scripts that will execute in order as soon as possible" data-noexport id="list-of-scripts-that-will-execute-in-order-as-soon-as-possible">list of scripts that will execute in order as soon
-      as possible<a class="self-link" href="#list-of-scripts-that-will-execute-in-order-as-soon-as-possible"></a></dfn> associated with the <a data-x-internal="node-document" href="https://dom.spec.whatwg.org/#concept-node-document" id="script-processing-model:node-document-7">node document</a> of the <code id="script-processing-model:the-script-element-39"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element at the time the <a href="https://html.spec.whatwg.org/#prepare-a-script" id="script-processing-model:prepare-a-script-5">prepare a script</a> algorithm started.</p>
-       <p>When <a href="https://html.spec.whatwg.org/#the-script-is-ready" id="script-processing-model:the-script-is-ready-7">the script is ready</a>, run the following steps:</p>
-       <ol>
-        <li>
-         <p>If the element is not now the first element in the <a href="https://html.spec.whatwg.org/#list-of-scripts-that-will-execute-in-order-as-soon-as-possible" id="script-processing-model:list-of-scripts-that-will-execute-in-order-as-soon-as-possible">list of scripts that will
-       execute in order as soon as possible</a> to which it was added above, then mark the
-       element as ready but return without executing the script yet.</p>
-        <li>
-         <p><i>Execution</i>: <a href="https://html.spec.whatwg.org/#execute-the-script-block" id="script-processing-model:execute-the-script-block">Execute the script block</a> corresponding to the first
-       script element in this <a href="https://html.spec.whatwg.org/#list-of-scripts-that-will-execute-in-order-as-soon-as-possible" id="script-processing-model:list-of-scripts-that-will-execute-in-order-as-soon-as-possible-2">list of scripts that will execute in order as soon as
-       possible</a>.</p>
-        <li>
-         <p>Remove the first element from this <a href="https://html.spec.whatwg.org/#list-of-scripts-that-will-execute-in-order-as-soon-as-possible" id="script-processing-model:list-of-scripts-that-will-execute-in-order-as-soon-as-possible-3">list of scripts that will execute in order as
-       soon as possible</a>.</p>
-        <li>
-         <p>If this <a href="https://html.spec.whatwg.org/#list-of-scripts-that-will-execute-in-order-as-soon-as-possible" id="script-processing-model:list-of-scripts-that-will-execute-in-order-as-soon-as-possible-4">list of scripts that will execute in order as soon as possible</a> is
-       still not empty and the first entry has already been marked as ready, then jump back to the
-       step labeled <i>execution</i>.</p>
-       </ol>
-      <dt id="script-processing-src"><a class="self-link" href="#script-processing-src"></a>If <a href="https://html.spec.whatwg.org/#concept-script-type" id="script-processing-model:concept-script-type-14">the script’s type</a> is "<code>classic</code>", and the element has a <code id="script-processing-model:attr-script-src-13"><a href="https://html.spec.whatwg.org/#attr-script-src">src</a></code> attribute
-      <dt id="script-processing-module-async"><a class="self-link" href="#script-processing-module-async"></a>If <a href="https://html.spec.whatwg.org/#concept-script-type" id="script-processing-model:concept-script-type-15">the script’s
-     type</a> is "<code>module</code>"
-      <dd>
-       <p>The element must be added to the <dfn data-dfn-type="dfn" data-lt="set of scripts that will execute as soon as possible" data-noexport id="set-of-scripts-that-will-execute-as-soon-as-possible">set of scripts that will execute as soon as
-      possible<a class="self-link" href="#set-of-scripts-that-will-execute-as-soon-as-possible"></a></dfn> of the <a data-x-internal="node-document" href="https://dom.spec.whatwg.org/#concept-node-document" id="script-processing-model:node-document-8">node document</a> of the <code id="script-processing-model:the-script-element-40"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element at the
-      time the <a href="https://html.spec.whatwg.org/#prepare-a-script" id="script-processing-model:prepare-a-script-6">prepare a script</a> algorithm started.</p>
-       <p>When <a href="https://html.spec.whatwg.org/#the-script-is-ready" id="script-processing-model:the-script-is-ready-8">the script is ready</a>, <a href="https://html.spec.whatwg.org/#execute-the-script-block" id="script-processing-model:execute-the-script-block-2">execute the script block</a> and then
-      remove the element from the <a href="https://html.spec.whatwg.org/#set-of-scripts-that-will-execute-as-soon-as-possible" id="script-processing-model:set-of-scripts-that-will-execute-as-soon-as-possible">set of scripts that will execute as soon as
-      possible</a>.</p>
-      <dt id="script-processing-style-delayed"><a class="self-link" href="#script-processing-style-delayed"></a>If the element does not have a <code id="script-processing-model:attr-script-src-14"><a href="https://html.spec.whatwg.org/#attr-script-src">src</a></code> attribute, and the element has been flagged as <a href="https://html.spec.whatwg.org/#parser-inserted" id="script-processing-model:parser-inserted-11">"parser-inserted"</a>, and either the parser that created the <code id="script-processing-model:the-script-element-41"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> is
-     an <a href="https://html.spec.whatwg.org/#xml-parser" id="script-processing-model:xml-parser-3">XML parser</a> or it’s an <a href="https://html.spec.whatwg.org/#html-parser" id="script-processing-model:html-parser-3">HTML parser</a> whose <a href="https://html.spec.whatwg.org/#script-nesting-level" id="script-processing-model:script-nesting-level">script nesting
-     level</a> is not greater than one, and the <code id="script-processing-model:document-6"><a href="https://html.spec.whatwg.org/#document">Document</a></code> of the <a href="https://html.spec.whatwg.org/#html-parser" id="script-processing-model:html-parser-4">HTML
-     parser</a> or <a href="https://html.spec.whatwg.org/#xml-parser" id="script-processing-model:xml-parser-4">XML parser</a> that created the <code id="script-processing-model:the-script-element-42"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element <a href="https://html.spec.whatwg.org/#has-a-style-sheet-that-is-blocking-scripts" id="script-processing-model:has-a-style-sheet-that-is-blocking-scripts">has
-     a style sheet that is blocking scripts</a>
-      <dd>
-       <p>The element is the <a href="https://html.spec.whatwg.org/#pending-parsing-blocking-script" id="script-processing-model:pending-parsing-blocking-script-2">pending parsing-blocking script</a> of the <code id="script-processing-model:document-7"><a href="https://html.spec.whatwg.org/#document">Document</a></code> of the parser that created the element. (There can only be one such
-      script per <code id="script-processing-model:document-8"><a href="https://html.spec.whatwg.org/#document">Document</a></code> at a time.)</p>
-       <p>Set the element’s <a href="https://html.spec.whatwg.org/#ready-to-be-parser-executed" id="script-processing-model:ready-to-be-parser-executed-3">"ready to be parser-executed"</a> flag. The parser will handle
-      executing the script.</p>
-      <dt id="script-processing-inline"><a class="self-link" href="#script-processing-inline"></a>Otherwise
-      <dd><a href="https://html.spec.whatwg.org/#immediately" id="script-processing-model:immediately-2">Immediately</a> <a href="https://html.spec.whatwg.org/#execute-the-script-block" id="script-processing-model:execute-the-script-block-3">execute the script block</a>, even if other scripts are
-     already executing.
-     </dl>
+    <li>... 
    </ol>
+   <p>In all subsequent steps, replace checks for <code>src</code> attribute existence with checks for non-null <code>[[ScriptURL]]</code> internal slot value, and replace references of <code>src</code> content attribute value with <code>[[ScriptURL]]</code> internal slot value. For example: </p>
+   <ul>
+    <li>
+     If 
+     <del><var>el</var> does not have a <code>src</code> content attribute</del>
+     <ins><var>el</var>’s <code>[[ScriptURL]]</code> internal slot value is null</ins>
+     , and the <a data-x-internal="should-element’s-inline-behavior-be-blocked-by-content-security-policy" href="https://w3c.github.io/webappsec-csp/#should-block-inline" id="script-processing-model:should-element’s-inline-behavior-be-blocked-by-content-security-policy">Should element’s inline
+   behavior be blocked by Content Security Policy?</a> algorithm returns "<code>Blocked</code>" when given <var>el</var>, "<code>script</code>", and <var>source text</var>, then return. 
+    <li>
+     If <var>el</var>
+     <ins>'s</ins>
+     <del>has a <code>src</code> content attribute</del>
+     <ins><code>[[ScriptURL]]</code> internal slot value is not null</ins>
+     , then: 
+    <li>
+     <p>
+      Let <var>src</var> be the value of <var>el</var>’s 
+      <del><code>src</code> attribute</del>
+      <ins><code>[[ScriptURL]]</code> internal slot</ins>
+      . 
+     </p>
+   </ul>
    <h4 class="heading settled" data-level="4.3.4" id="enforcement-in-sinks"><span class="secno">4.3.4. </span><span class="content">Enforcement in element attributes</span><a class="self-link" href="#enforcement-in-sinks"></a></h4>
    <p>This document modifies following IDL attributes of various DOM elements:</p>
 <pre class="idl exclude highlight def"><c- b>partial</c-> <c- b>interface</c-> <a class="idl-code" data-link-type="interface" href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#htmliframeelement" id="ref-for-htmliframeelement"><c- g>HTMLIFrameElement</c-></a> {
@@ -2538,7 +2296,7 @@ as in their original counterparts, apart from additional behavior triggered by t
   <a class="idl-code" data-link-type="interface" href="https://webidl.spec.whatwg.org/#idl-long" id="ref-for-idl-long②"><c- b>long</c-></a> <dfn class="idl-code" data-dfn-for="WindowOrWorkerGlobalScope" data-dfn-type="method" data-export data-lt="setInterval(handler, timeout, ...arguments)|setInterval(handler, timeout)|setInterval(handler)" id="dom-windoworworkerglobalscope-setinterval"><code><c- g>setInterval</c-></code><a class="self-link" href="#dom-windoworworkerglobalscope-setinterval"></a></dfn>(<a data-link-type="idl-name" href="#typedefdef-trustedtimerhandler" id="ref-for-typedefdef-trustedtimerhandler①"><c- n>TrustedTimerHandler</c-></a> <dfn class="idl-code" data-dfn-for="WindowOrWorkerGlobalScope/setInterval(handler, timeout, ...arguments), WindowOrWorkerGlobalScope/setInterval(handler, timeout), WindowOrWorkerGlobalScope/setInterval(handler)" data-dfn-type="argument" data-export id="dom-windoworworkerglobalscope-setinterval-handler-timeout-arguments-handler"><code><c- g>handler</c-></code><a class="self-link" href="#dom-windoworworkerglobalscope-setinterval-handler-timeout-arguments-handler"></a></dfn>, <c- b>optional</c-> <a class="idl-code" data-link-type="interface" href="https://webidl.spec.whatwg.org/#idl-long" id="ref-for-idl-long③"><c- b>long</c-></a> <dfn class="idl-code" data-dfn-for="WindowOrWorkerGlobalScope/setInterval(handler, timeout, ...arguments), WindowOrWorkerGlobalScope/setInterval(handler, timeout), WindowOrWorkerGlobalScope/setInterval(handler)" data-dfn-type="argument" data-export id="dom-windoworworkerglobalscope-setinterval-handler-timeout-arguments-timeout"><code><c- g>timeout</c-></code><a class="self-link" href="#dom-windoworworkerglobalscope-setinterval-handler-timeout-arguments-timeout"></a></dfn> = 0, <a class="idl-code" data-link-type="interface" href="https://webidl.spec.whatwg.org/#idl-any" id="ref-for-idl-any①⓪"><c- b>any</c-></a>... <dfn class="idl-code" data-dfn-for="WindowOrWorkerGlobalScope/setInterval(handler, timeout, ...arguments), WindowOrWorkerGlobalScope/setInterval(handler, timeout), WindowOrWorkerGlobalScope/setInterval(handler)" data-dfn-type="argument" data-export id="dom-windoworworkerglobalscope-setinterval-handler-timeout-arguments-arguments"><code><c- g>arguments</c-></code><a class="self-link" href="#dom-windoworworkerglobalscope-setinterval-handler-timeout-arguments-arguments"></a></dfn>);
 };
 </pre>
-   <p>To the <a href="https://www.w3.org/TR/html5/#timer-initialisation-steps">timer initialization steps algorithm</a>,
+   <p>To the <a href="https://www.w3.org/html/wg/drafts/html/master/#timer-initialisation-steps">timer initialization steps algorithm</a>,
 add this step between 7.1 and 7.2:</p>
    <ol>
     <li data-md>
@@ -2562,7 +2320,7 @@ the <a data-link-type="abstract-op" href="#abstract-opdef-get-trusted-type-compl
 functions in place of a string when Trusted Types are enforced, but
 also unconditionally accepts any <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#Function" id="ref-for-Function②">Function</a></code> object.</p>
    <h4 class="heading settled" data-level="4.3.6" id="enforcement-in-event-handler-content-attributes"><span class="secno">4.3.6. </span><span class="content">Enforcement in event handler content attributes</span><a class="self-link" href="#enforcement-in-event-handler-content-attributes"></a></h4>
-   <p>This document modifies the <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-element-attributes-change-ext" id="ref-for-concept-element-attributes-change-ext">attribute change steps</a> for an <a href="https://www.w3.org/TR/html5/#event-handler-content-attributes">event handler content attribute</a>.</p>
+   <p>This document modifies the <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-element-attributes-change-ext" id="ref-for-concept-element-attributes-change-ext">attribute change steps</a> for an <a href="https://www.w3.org/html/wg/drafts/html/master/#event-handler-content-attributes">event handler content attribute</a>.</p>
    <p>At the beginning of step 5, insert the following steps:</p>
    <ol>
     <li data-md>
@@ -2583,7 +2341,7 @@ also unconditionally accepts any <code class="idl"><a data-link-type="idl" href=
     <li data-md>
      <p>If the algorithm throws an error, abort these steps.</p>
    </ol>
-   <p class="note" role="note"><span>Note:</span> This also applies to events in <a href="https://www.w3.org/TR/SVG2/interact.html#EventAttributes"><cite>SVG 2</cite> § 15.9 Event attributes</a>.</p>
+   <p class="note" role="note"><span>Note:</span> This also applies to events in <a href="https://svgwg.org/svg2-draft/interact.html#EventAttributes"><cite>SVG 2</cite> § 15.8 Event attributes</a>.</p>
    <div class="example" id="event-handlers-example">
     <a class="self-link" href="#event-handlers-example"></a> 
 <pre class="highlight"><c- c1>// Content-Security-Policy: require-trusted-types-for 'script'</c->
@@ -2766,16 +2524,16 @@ instance to the <code class="idl"><a data-link-type="idl" href="#dom-range-creat
    <div class="mdn-anno wrapped after">
     <button class="mdn-anno-btn"><b class="less-than-two-engines-flag" title="This feature is in less than two current engines.">⚠</b><span>MDN</span></button>
     <div class="feature">
-     <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/require-trusted-types-for" title="The HTTP Content-Security-Policy (CSP) require-trusted-types-for directive instructs user agents to control the data passed to DOM XSS sink functions, like Element.innerHTML setter.">Headers/Content-Security-Policy/require-trusted-types-for</a></p>
+     <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/require-trusted-types-for" title="The HTTP Content-Security-Policy (CSP) require-trusted-types-for Experimental directive instructs user agents to control the data passed to DOM XSS sink functions, like Element.innerHTML setter.">Headers/Content-Security-Policy/require-trusted-types-for</a></p>
      <p class="less-than-two-engines-text">In only one current engine.</p>
      <div class="support">
       <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
       <hr>
-      <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+      <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
       <hr>
-      <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+      <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
       <hr>
-      <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android yes"><span>Opera Mobile</span><span>59+</span></span>
+      <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>?</span></span>
      </div>
     </div>
    </div>
@@ -2833,16 +2591,16 @@ directive-value = <a data-link-type="dfn" href="#trusted-types-sink-group" id="r
    <div class="mdn-anno wrapped after">
     <button class="mdn-anno-btn"><b class="less-than-two-engines-flag" title="This feature is in less than two current engines.">⚠</b><span>MDN</span></button>
     <div class="feature">
-     <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types" title="The HTTP Content-Security-Policy (CSP) trusted-types directive instructs user agents to restrict the creation of Trusted Types policies - functions that build non-spoofable, typed values intended to be passed to DOM XSS sinks in place of strings.">Headers/Content-Security-Policy/trusted-types</a></p>
+     <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types" title="The HTTP Content-Security-Policy (CSP) trusted-types Experimental directive instructs user agents to restrict the creation of Trusted Types policies - functions that build non-spoofable, typed values intended to be passed to DOM XSS sinks in place of strings.">Headers/Content-Security-Policy/trusted-types</a></p>
      <p class="less-than-two-engines-text">In only one current engine.</p>
      <div class="support">
       <span class="firefox no"><span>Firefox</span><span>None</span></span><span class="safari no"><span>Safari</span><span>None</span></span><span class="chrome yes"><span>Chrome</span><span>83+</span></span>
       <hr>
-      <span class="opera yes"><span>Opera</span><span>69+</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
+      <span class="opera no"><span>Opera</span><span>?</span></span><span class="edge_blink yes"><span>Edge</span><span>83+</span></span>
       <hr>
-      <span class="edge no"><span>Edge (Legacy)</span><span>None</span></span><span class="ie no"><span>IE</span><span>None</span></span>
+      <span class="edge no"><span>Edge (Legacy)</span><span>?</span></span><span class="ie no"><span>IE</span><span>None</span></span>
       <hr>
-      <span class="firefox_android no"><span>Firefox for Android</span><span>None</span></span><span class="safari_ios no"><span>iOS Safari</span><span>None</span></span><span class="chrome_android yes"><span>Chrome for Android</span><span>83+</span></span><span class="webview_android yes"><span>Android WebView</span><span>83+</span></span><span class="samsunginternet_android yes"><span>Samsung Internet</span><span>13.0+</span></span><span class="opera_android no"><span>Opera Mobile</span><span>None</span></span>
+      <span class="firefox_android no"><span>Firefox for Android</span><span>?</span></span><span class="safari_ios no"><span>iOS Safari</span><span>?</span></span><span class="chrome_android no"><span>Chrome for Android</span><span>?</span></span><span class="webview_android no"><span>Android WebView</span><span>?</span></span><span class="samsunginternet_android no"><span>Samsung Internet</span><span>?</span></span><span class="opera_android no"><span>Opera Mobile</span><span>None</span></span>
      </div>
     </div>
    </div>
@@ -2900,7 +2658,7 @@ is <code>"require-trusted-types-for"</code></p>
        <p>If <var>directive</var>’s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#directive-value" id="ref-for-directive-value③">value</a> does not contain a <a data-link-type="dfn" href="#trusted-types-sink-group" id="ref-for-trusted-types-sink-group⑥">trusted-types-sink-group</a> which is a match
 for a value <var>sinkGroup</var>, skip to the next <var>policy</var>.</p>
       <li data-md>
-       <p>Let <var>violation</var> be the result of executing <a href="https://www.w3.org/TR/CSP3/#create-violation-for-global">Create a violation object for global, policy, and directive</a> on <var>global</var>, <var>policy</var> and <code>"require-trusted-types-for"</code></p>
+       <p>Let <var>violation</var> be the result of executing <a href="https://w3c.github.io/webappsec-csp/#create-violation-for-global">Create a violation object for global, policy, and directive</a> on <var>global</var>, <var>policy</var> and <code>"require-trusted-types-for"</code></p>
       <li data-md>
        <p>Set <var>violation</var>’s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#violation-resource" id="ref-for-violation-resource">resource</a> to <code>"trusted-types-sink"</code>.</p>
       <li data-md>
@@ -2908,7 +2666,7 @@ for a value <var>sinkGroup</var>, skip to the next <var>policy</var>.</p>
       <li data-md>
        <p>Set <var>violation</var>’s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#violation-sample" id="ref-for-violation-sample">sample</a> to be the result of <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#string-concatenate" id="ref-for-string-concatenate②">concatenating</a> the list « <var>sink</var>, <var>trimmedSource</var> « using <code>"|"</code> as a <var>separator</var>.</p>
       <li data-md>
-       <p>Execute <a href="https://www.w3.org/TR/CSP3/#report-violation">Report a violation</a> on <var>violation</var>.</p>
+       <p>Execute <a href="https://w3c.github.io/webappsec-csp/#report-violation">Report a violation</a> on <var>violation</var>.</p>
       <li data-md>
        <p>If <var>policy</var>’s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#policy-disposition" id="ref-for-policy-disposition">disposition</a> is <code>"enforce"</code>, then set <var>result</var> to <code>"Blocked"</code>.</p>
      </ol>
@@ -2947,13 +2705,13 @@ which value is <var>policyName</var>, and <var>directive</var>’s <a data-link-
       <li data-md>
        <p>If <var>createViolation</var> is false, skip to the next <var>policy</var>.</p>
       <li data-md>
-       <p>Let <var>violation</var> be the result of executing <a href="https://www.w3.org/TR/CSP3/#create-violation-for-global">Create a violation object for global, policy, and directive</a> on <var>global</var>, <var>policy</var> and <code>"trusted-types"</code></p>
+       <p>Let <var>violation</var> be the result of executing <a href="https://w3c.github.io/webappsec-csp/#create-violation-for-global">Create a violation object for global, policy, and directive</a> on <var>global</var>, <var>policy</var> and <code>"trusted-types"</code></p>
       <li data-md>
        <p>Set <var>violation</var>’s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#violation-resource" id="ref-for-violation-resource①">resource</a> to <code>"trusted-types-policy"</code>.</p>
       <li data-md>
        <p>Set <var>violation</var>’s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#violation-sample" id="ref-for-violation-sample①">sample</a> to the substring of <var>policyName</var>, containing its first 40 characters.</p>
       <li data-md>
-       <p>Execute <a href="https://www.w3.org/TR/CSP3/#report-violation">Report a violation</a> on <var>violation</var>.</p>
+       <p>Execute <a href="https://w3c.github.io/webappsec-csp/#report-violation">Report a violation</a> on <var>violation</var>.</p>
       <li data-md>
        <p>If <var>policy</var>’s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#policy-disposition" id="ref-for-policy-disposition①">disposition</a> is <code>"enforce"</code>, then set <var>result</var> to <code>"Blocked"</code>.</p>
      </ol>
@@ -2963,13 +2721,13 @@ which value is <var>policyName</var>, and <var>directive</var>’s <a data-link-
    <h4 class="heading settled" data-level="4.9.5" id="csp-violation-object-hdr"><span class="secno">4.9.5. </span><span class="content">Violation object changes</span><a class="self-link" href="#csp-violation-object-hdr"></a></h4>
    <p><a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#violation" id="ref-for-violation">Violation</a> object <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#violation-resource" id="ref-for-violation-resource②">resource</a> also allows <code>"trusted-types-policy"</code> and <code>"trusted-types-sink"</code> as values.</p>
    <h4 class="heading settled" data-level="4.9.6" id="csp-eval"><span class="secno">4.9.6. </span><span class="content">Support for dynamic code compilation</span><a class="self-link" href="#csp-eval"></a></h4>
-   <p>This document modifies the <a href="https://www.w3.org/TR/CSP3/#can-compile-strings">EnsureCSPDoesNotBlockStringCompilation</a> which is reproduced in its entirety below with additions and deletions.</p>
+   <p>This document modifies the <a href="https://w3c.github.io/webappsec-csp/#can-compile-strings">EnsureCSPDoesNotBlockStringCompilation</a> which is reproduced in its entirety below with additions and deletions.</p>
    <p class="note" role="note"><span>Note:</span> This is based on <a href="https://tc39.es/proposal-dynamic-code-brand-checks/">dynamic-code-brand-checks</a> and
 assumes additional arguments are passed to this algorithm from ECMAScript.
 See also <a href="https://github.com/tc39/ecma262/issues/938">TC39/ecma262 issue #938</a>.</p>
    <div class="note" role="note">
     Note: EcmaScript code may call <code>Function()</code> and <code>eval</code> cross realm. 
-<pre class="highlight"><c- a>let</c-> f <c- o>=</c-> <c- k>new</c-> self<c- p>.</c->top<c- p>.</c->Function<c- p>(</c->source<c- p>);</c->
+<pre class="highlight"><c- a>let</c-> f <c- o>=</c-> <c- ow>new</c-> self<c- p>.</c->top<c- p>.</c->Function<c- p>(</c->source<c- p>);</c->
 </pre>
     <p>In this case, the <var>callerRealm</var>’s Window is <code>self</code> and the <var>calleeRealm</var>’s Window is <code>self.top</code>.
 The Trusted Types portion of this algorithm uses <var>calleeRealm</var> and its CSP setting for consistency with other sinks.</p>
@@ -2977,13 +2735,11 @@ The Trusted Types portion of this algorithm uses <var>calleeRealm</var> and its 
 self<c- p>.</c->top<c- p>.</c->body<c- p>.</c->innerHTML <c- o>=</c-> <c- t>'Hello, World!'</c-><c- p>;</c->
 <c- c1>// Using another Realm’s builtin Function constructor should analogously use that</c->
 <c- c1>// Realm’s default policy.</c->
-<c- k>new</c-> self<c- p>.</c->top<c- p>.</c->Function<c- p>(</c-><c- t>'alert(1)'</c-><c- p>)()</c->
+<c- ow>new</c-> self<c- p>.</c->top<c- p>.</c->Function<c- p>(</c-><c- t>'alert(1)'</c-><c- p>)()</c->
 </pre>
-    <p>This is subtly different from the CSP directive enforcement portion which rejects if either
-the <var>calleeRealm</var> or <var>callerRealm</var>’s Content-Security-Policy rejects string compilation.</p>
    </div>
    <p>
-    Given two <a href="https://tc39.es/ecma262/multipage/#realm">realms</a> (<var>callerRealm</var> and <var>calleeRealm</var>), a string
+    Given a <a href="https://tc39.es/ecma262/multipage/#realm">realm</a> (<var>calleeRealm</var>), a string
 (<var>source</var>) 
     <ins>, a boolean <var>wasCodeLike</var> and a string <var>compilationSink</var></ins>
     , this algorithm returns 
@@ -3017,50 +2773,46 @@ set to <var>source</var>. Otherwise, let <var>sourceToValidate</var> be <var>sou
     <li data-md>
      <ins>If the algorithm throws an error, throw an <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#exceptiondef-evalerror" id="ref-for-exceptiondef-evalerror">EvalError</a></code>.</ins>
     <li data-md>
-     <p>Let <var>globals</var> be a list containing <var>callerRealm</var>’s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-realm-global" id="ref-for-concept-realm-global⑤">global object</a> and <var>calleeRealm</var>’s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-realm-global" id="ref-for-concept-realm-global⑥">global object</a>.</p>
+     <p>Let <var>global</var> be a <var>calleeRealm</var>’s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-realm-global" id="ref-for-concept-realm-global⑤">global object</a>.</p>
     <li data-md>
-     <p>For each <var>global</var> in <var>globals</var>:</p>
+     <p>Let <var>result</var> be "<code>Allowed</code>".</p>
+    <li data-md>
+     <p>For each <var>policy</var> in <var>global</var>’s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#global-object-csp-list" id="ref-for-global-object-csp-list③">CSP list</a>:</p>
      <ol>
       <li data-md>
-       <p>Let <var>result</var> be "<code>Allowed</code>".</p>
+       <p>Let <var>source-list</var> be <code>null</code>.</p>
       <li data-md>
-       <p>For each <var>policy</var> in <var>global</var>’s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#global-object-csp-list" id="ref-for-global-object-csp-list③">CSP list</a>:</p>
+       <p>If <var>policy</var> contains a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#directives" id="ref-for-directives⑧">directive</a> whose <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#directive-name" id="ref-for-directive-name③">name</a> is "<code>script-src</code>", then
+set <var>source-list</var> to that <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#directives" id="ref-for-directives⑨">directive</a>'s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#directive-value" id="ref-for-directive-value⑧">value</a>.</p>
+       <p>Otherwise if <var>policy</var> contains a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#directives" id="ref-for-directives①⓪">directive</a> whose <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#directive-name" id="ref-for-directive-name④">name</a> is
+"<code>default-src</code>", then set <var>source-list</var> to that directive’s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#directive-value" id="ref-for-directive-value⑨">value</a>.</p>
+      <li data-md>
+       <p>If <var>source-list</var> is not <code>null</code>, and does not contain a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#source-expression" id="ref-for-source-expression">source expression</a> which is
+an <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#ascii-case-insensitive" id="ref-for-ascii-case-insensitive">ASCII case-insensitive</a> match for the string "<a data-link-type="grammar" href="https://w3c.github.io/webappsec-csp/#grammardef-unsafe-eval" id="ref-for-grammardef-unsafe-eval"><code>'unsafe-eval'</code></a>" then:</p>
        <ol>
         <li data-md>
-         <p>Let <var>source-list</var> be <code>null</code>.</p>
+         <p>Let <var>violation</var> be the result of executing <a href="https://w3c.github.io/webappsec-csp/#create-violation-for-global"><cite>Content Security Policy</cite> § 2.4.1 Create a violation object for global, policy, and directive</a> on <var>global</var>, <var>policy</var>, and "<code>script-src</code>".</p>
         <li data-md>
-         <p>If <var>policy</var> contains a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#directives" id="ref-for-directives⑧">directive</a> whose <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#directive-name" id="ref-for-directive-name③">name</a> is "<code>script-src</code>", then
-set <var>source-list</var> to that <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#directives" id="ref-for-directives⑨">directive</a>'s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#directive-value" id="ref-for-directive-value⑧">value</a>.</p>
-         <p>Otherwise if <var>policy</var> contains a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#directives" id="ref-for-directives①⓪">directive</a> whose <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#directive-name" id="ref-for-directive-name④">name</a> is
-"<code>default-src</code>", then set <var>source-list</var> to that directive’s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#directive-value" id="ref-for-directive-value⑨">value</a>.</p>
+         <p>Set <var>violation</var>’s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#violation-resource" id="ref-for-violation-resource③">resource</a> to "<code>inline</code>".</p>
         <li data-md>
-         <p>If <var>source-list</var> is not <code>null</code>, and does not contain a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#source-expression" id="ref-for-source-expression">source expression</a> which is
-an <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#ascii-case-insensitive" id="ref-for-ascii-case-insensitive">ASCII case-insensitive</a> match for the string "<a data-link-type="grammar" href="https://w3c.github.io/webappsec-csp/#grammardef-unsafe-eval" id="ref-for-grammardef-unsafe-eval"><code>'unsafe-eval'</code></a>" then:</p>
-         <ol>
-          <li data-md>
-           <p>Let <var>violation</var> be the result of executing <a href="https://www.w3.org/TR/CSP3/#create-violation-for-global"><cite>Content Security Policy</cite> § 2.4.1 Create a violation object for global, policy, and directive</a> on <var>global</var>, <var>policy</var>, and "<code>script-src</code>".</p>
-          <li data-md>
-           <p>Set <var>violation</var>’s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#violation-resource" id="ref-for-violation-resource③">resource</a> to "<code>inline</code>".</p>
-          <li data-md>
-           <p>
-            If <var>source-list</var> <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-contain" id="ref-for-list-contain">contains</a> the expression
+         <p>
+          If <var>source-list</var> <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-contain" id="ref-for-list-contain">contains</a> the expression
 "<a data-link-type="grammar" href="https://w3c.github.io/webappsec-csp/#grammardef-report-sample" id="ref-for-grammardef-report-sample"><code>'report-sample'</code></a>", then set <var>violation</var>’s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#violation-sample" id="ref-for-violation-sample②">sample</a> to
 the substring of 
-            <del><var>source</var></del>
-            <ins><var>sourceString</var></ins>
-             containing its first
+          <del><var>source</var></del>
+          <ins><var>sourceString</var></ins>
+           containing its first
 40 characters.
-           </p>
-          <li data-md>
-           <p>Execute <a href="https://www.w3.org/TR/CSP3/#report-violation"><cite>Content Security Policy</cite> § 5.3 Report a violation</a> on <var>violation</var>.</p>
-          <li data-md>
-           <p>If <var>policy</var>’s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#policy-disposition" id="ref-for-policy-disposition②">disposition</a> is "<code>enforce</code>", then set <var>result</var> to
+         </p>
+        <li data-md>
+         <p>Execute <a href="https://w3c.github.io/webappsec-csp/#report-violation"><cite>Content Security Policy</cite> § 5.5 Report a violation</a> on <var>violation</var>.</p>
+        <li data-md>
+         <p>If <var>policy</var>’s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#policy-disposition" id="ref-for-policy-disposition②">disposition</a> is "<code>enforce</code>", then set <var>result</var> to
 "<code>Blocked</code>".</p>
-         </ol>
        </ol>
-      <li data-md>
-       <p>If <var>result</var> is "<code>Blocked</code>", throw an <code>EvalError</code> exception.</p>
      </ol>
+    <li data-md>
+     <p>If <var>result</var> is "<code>Blocked</code>", throw an <code>EvalError</code> exception.</p>
     <li data-md>
      <ins>Return <var>sourceString</var>.</ins>
    </ol>
@@ -3083,7 +2835,7 @@ windows, that don’t have the same set of restrictions. In essence - it is
 possible to bypass Trusted Types if a malicious author creates a setup in which
 a restricted document colludes with an unrestricted one. In an extreme case, the
 restricted document might create a <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/FileAPI/#dfn-Blob" id="ref-for-dfn-Blob">Blob</a></code> from strings and navigate to it.</p>
-   <p>CSP propagation rules (see <a href="https://www.w3.org/TR/CSP3/#security-inherit-csp"><cite>Content Security Policy</cite> § 7.8 CSP Inheriting to avoid bypasses</a> partially address this
+   <p>CSP propagation rules (see <a href="https://w3c.github.io/webappsec-csp/#security-inherit-csp"><cite>Content Security Policy</cite> § 7.8 CSP Inheriting to avoid bypasses</a> partially address this
 issue, as new <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#local-scheme" id="ref-for-local-scheme">local scheme</a> documents will inherit the same set of restrictions,
 so - for example - <code>script-src</code> restrictions could be used to make sure injections
 into <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/FileAPI/#dfn-Blob" id="ref-for-dfn-Blob①">Blob</a></code> contents would not execute scripts. To address this issue
@@ -3171,7 +2923,7 @@ to the <a data-link-type="dfn" href="#injection-sink" id="ref-for-injection-sink
     and are set apart from the normative text
     with <code>class="note"</code>,
     like this: </p>
-   <p class="note" role="note">Note, this is an informative note. </p>
+   <p class="note" role="note">Note, this is an informative note.</p>
    <h3 class="no-ref no-num heading settled" id="w3c-conformant-algorithms"><span class="content">Conformant Algorithms</span><a class="self-link" href="#w3c-conformant-algorithms"></a></h3>
    <p>Requirements phrased in the imperative as part of algorithms
     (such as "strip any leading space characters"
@@ -3262,8 +3014,6 @@ to the <a data-link-type="dfn" href="#injection-sink" id="ref-for-injection-sink
    <li><a href="#dom-trustedtypepolicyfactory-ishtml">isHTML(value)</a><span>, in § 2.3.1</span>
    <li><a href="#dom-trustedtypepolicyfactory-isscripturl">isScriptURL(value)</a><span>, in § 2.3.1</span>
    <li><a href="#dom-trustedtypepolicyfactory-isscript">isScript(value)</a><span>, in § 2.3.1</span>
-   <li><a href="#list-of-scripts-that-will-execute-in-order-as-soon-as-possible">list of scripts that will execute in order as soon as possible</a><span>, in § 4.3.3.3</span>
-   <li><a href="#list-of-scripts-that-will-execute-when-the-document-has-finished-parsing">list of scripts that will execute when the document has finished parsing</a><span>, in § 4.3.3.3</span>
    <li>
     name
     <ul>
@@ -3287,7 +3037,6 @@ to the <a data-link-type="dfn" href="#injection-sink" id="ref-for-injection-sink
    <li><a href="#dom-windoworworkerglobalscope-setinterval">setInterval(handler)</a><span>, in § 4.3.5</span>
    <li><a href="#dom-windoworworkerglobalscope-setinterval">setInterval(handler, timeout)</a><span>, in § 4.3.5</span>
    <li><a href="#dom-windoworworkerglobalscope-setinterval">setInterval(handler, timeout, ...arguments)</a><span>, in § 4.3.5</span>
-   <li><a href="#set-of-scripts-that-will-execute-as-soon-as-possible">set of scripts that will execute as soon as possible</a><span>, in § 4.3.3.3</span>
    <li><a href="#dom-windoworworkerglobalscope-settimeout">setTimeout(handler)</a><span>, in § 4.3.5</span>
    <li><a href="#dom-windoworworkerglobalscope-settimeout">setTimeout(handler, timeout)</a><span>, in § 4.3.5</span>
    <li><a href="#dom-windoworworkerglobalscope-settimeout">setTimeout(handler, timeout, ...arguments)</a><span>, in § 4.3.5</span>
@@ -3705,7 +3454,6 @@ to the <a data-link-type="dfn" href="#injection-sink" id="ref-for-injection-sink
     <li><a href="#ref-for-htmlscriptelement">3.7. Prepare the script URL and text</a>
     <li><a href="#ref-for-htmlscriptelement①">4.3.3.1. Slots with trusted values</a>
     <li><a href="#ref-for-htmlscriptelement②">4.3.3.2. Setting slot values</a> <a href="#ref-for-htmlscriptelement③">(2)</a> <a href="#ref-for-htmlscriptelement④">(3)</a>
-    <li><a href="#ref-for-htmlscriptelement⑤">4.3.3.3. Slot value verification</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-htmltemplateelement">
@@ -3782,10 +3530,10 @@ to the <a data-link-type="dfn" href="#injection-sink" id="ref-for-injection-sink
     <li><a href="#ref-for-dom-innertext">4.3.3.2. Setting slot values</a> <a href="#ref-for-dom-innertext①">(2)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-prepare-a-script">
-   <a href="https://html.spec.whatwg.org/multipage/scripting.html#prepare-a-script">https://html.spec.whatwg.org/multipage/scripting.html#prepare-a-script</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-prepare-the-script-element">
+   <a href="https://html.spec.whatwg.org/#prepare-the-script-element">https://html.spec.whatwg.org/#prepare-the-script-element</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-prepare-a-script">4.3.3.3. Slot value verification</a>
+    <li><a href="#ref-for-prepare-the-script-element">4.3.3.3. Slot value verification</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-concept-global-object-realm">
@@ -3829,7 +3577,6 @@ to the <a data-link-type="dfn" href="#injection-sink" id="ref-for-injection-sink
   <aside class="dfn-panel" data-for="term-for-ascii-case-insensitive">
    <a href="https://infra.spec.whatwg.org/#ascii-case-insensitive">https://infra.spec.whatwg.org/#ascii-case-insensitive</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#script-processing-model:ascii-case-insensitive">4.3.3.3. Slot value verification</a> <a href="#script-processing-model:ascii-case-insensitive-2">(2)</a> <a href="#script-processing-model:ascii-case-insensitive-3">(3)</a>
     <li><a href="#ref-for-ascii-case-insensitive">4.9.6. Support for dynamic code compilation</a>
    </ul>
   </aside>
@@ -4247,7 +3994,7 @@ to the <a data-link-type="dfn" href="#injection-sink" id="ref-for-injection-sink
      <li><span class="dfn-paneled" id="term-for-concept-settings-object-global">global object <small>(for environment settings object)</small></span>
      <li><span class="dfn-paneled" id="term-for-html-fragment-serialisation-algorithm">html fragment serialization algorithm</span>
      <li><span class="dfn-paneled" id="term-for-dom-innertext">innerText</span>
-     <li><span class="dfn-paneled" id="term-for-prepare-a-script">prepare a script</span>
+     <li><span class="dfn-paneled" id="term-for-prepare-the-script-element">prepare the script element</span>
      <li><span class="dfn-paneled" id="term-for-concept-global-object-realm">realm</span>
      <li><span class="dfn-paneled" id="term-for-reflect">reflect</span>
      <li><span class="dfn-paneled" id="term-for-concept-relevant-global">relevant global object</span>
@@ -4265,7 +4012,7 @@ to the <a data-link-type="dfn" href="#injection-sink" id="ref-for-injection-sink
      <li><span class="dfn-paneled" id="term-for-ordered-set">ordered set</span>
     </ul>
    <li>
-    <a data-link-type="biblio">[service-workers-1]</a> defines the following terms:
+    <a data-link-type="biblio">[SERVICE-WORKERS-1]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-dictdef-registrationoptions">RegistrationOptions</span>
      <li><span class="dfn-paneled" id="term-for-serviceworkercontainer">ServiceWorkerContainer</span>
@@ -4326,27 +4073,29 @@ to the <a data-link-type="dfn" href="#injection-sink" id="ref-for-injection-sink
   <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
   <dl>
    <dt id="biblio-csp3">[CSP3]
-   <dd>Mike West. <a href="https://www.w3.org/TR/CSP3/"><cite>Content Security Policy Level 3</cite></a>. 29 June 2021. WD. URL: <a href="https://www.w3.org/TR/CSP3/">https://www.w3.org/TR/CSP3/</a>
+   <dd>Content Security Policy Level 3 URL: <a href="https://www.w3.org/TR/CSP3/">https://www.w3.org/TR/CSP3/</a>
    <dt id="biblio-dom">[DOM]
    <dd>Anne van Kesteren. <a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a>
    <dt id="biblio-dom-parsing">[DOM-Parsing]
-   <dd>Travis Leithead. <a href="https://www.w3.org/TR/DOM-Parsing/"><cite>DOM Parsing and Serialization</cite></a>. 17 May 2016. WD. URL: <a href="https://www.w3.org/TR/DOM-Parsing/">https://www.w3.org/TR/DOM-Parsing/</a>
+   <dd>Travis Leithead. <a href="https://w3c.github.io/DOM-Parsing/"><cite>DOM Parsing and Serialization</cite></a>. URL: <a href="https://w3c.github.io/DOM-Parsing/">https://w3c.github.io/DOM-Parsing/</a>
    <dt id="biblio-ecmascript">[ECMASCRIPT]
    <dd><a href="https://tc39.es/ecma262/multipage/"><cite>ECMAScript Language Specification</cite></a>. URL: <a href="https://tc39.es/ecma262/multipage/">https://tc39.es/ecma262/multipage/</a>
    <dt id="biblio-fetch">[Fetch]
    <dd>Anne van Kesteren. <a href="https://fetch.spec.whatwg.org/"><cite>Fetch Standard</cite></a>. Living Standard. URL: <a href="https://fetch.spec.whatwg.org/">https://fetch.spec.whatwg.org/</a>
    <dt id="biblio-fileapi">[FileAPI]
-   <dd>Marijn Kruisselbrink; Arun Ranganathan. <a href="https://www.w3.org/TR/FileAPI/"><cite>File API</cite></a>. 4 June 2021. WD. URL: <a href="https://www.w3.org/TR/FileAPI/">https://www.w3.org/TR/FileAPI/</a>
+   <dd>Marijn Kruisselbrink; Arun Ranganathan. <a href="https://w3c.github.io/FileAPI/"><cite>File API</cite></a>. URL: <a href="https://w3c.github.io/FileAPI/">https://w3c.github.io/FileAPI/</a>
    <dt id="biblio-html">[HTML]
-   <dd>Anne van Kesteren; et al. <a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
+   <dd>A vocabulary and associated APIs for HTML and XHTML URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
+   <dt id="biblio-html5">[HTML5]
+   <dd>Ian Hickson; et al. <a href="https://www.w3.org/html/wg/drafts/html/master/"><cite>HTML5</cite></a>. URL: <a href="https://www.w3.org/html/wg/drafts/html/master/">https://www.w3.org/html/wg/drafts/html/master/</a>
    <dt id="biblio-infra">[INFRA]
    <dd>Anne van Kesteren; Domenic Denicola. <a href="https://infra.spec.whatwg.org/"><cite>Infra Standard</cite></a>. Living Standard. URL: <a href="https://infra.spec.whatwg.org/">https://infra.spec.whatwg.org/</a>
    <dt id="biblio-rfc2119">[RFC2119]
    <dd>S. Bradner. <a href="https://datatracker.ietf.org/doc/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. March 1997. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a>
    <dt id="biblio-service-workers-1">[SERVICE-WORKERS-1]
-   <dd>Alex Russell; et al. <a href="https://www.w3.org/TR/service-workers-1/"><cite>Service Workers 1</cite></a>. 19 November 2019. CR. URL: <a href="https://www.w3.org/TR/service-workers-1/">https://www.w3.org/TR/service-workers-1/</a>
+   <dd>Alex Russell; et al. <a href="https://w3c.github.io/ServiceWorker/"><cite>Service Workers 1</cite></a>. URL: <a href="https://w3c.github.io/ServiceWorker/">https://w3c.github.io/ServiceWorker/</a>
    <dt id="biblio-svg2">[SVG2]
-   <dd>Amelia Bellamy-Royds; et al. <a href="https://www.w3.org/TR/SVG2/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. 4 October 2018. CR. URL: <a href="https://www.w3.org/TR/SVG2/">https://www.w3.org/TR/SVG2/</a>
+   <dd>Amelia Bellamy-Royds; et al. <a href="https://svgwg.org/svg2-draft/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. URL: <a href="https://svgwg.org/svg2-draft/">https://svgwg.org/svg2-draft/</a>
    <dt id="biblio-url">[URL]
    <dd>Anne van Kesteren. <a href="https://url.spec.whatwg.org/"><cite>URL Standard</cite></a>. Living Standard. URL: <a href="https://url.spec.whatwg.org/">https://url.spec.whatwg.org/</a>
    <dt id="biblio-webidl">[WEBIDL]
@@ -4356,8 +4105,6 @@ to the <a data-link-type="dfn" href="#injection-sink" id="ref-for-injection-sink
   <dl>
    <dt id="biblio-html-design-principles">[HTML-DESIGN-PRINCIPLES]
    <dd>Anne van Kesteren; Maciej Stachowiak. <a href="https://www.w3.org/TR/html-design-principles/"><cite>HTML Design Principles</cite></a>. 26 November 2007. WD. URL: <a href="https://www.w3.org/TR/html-design-principles/">https://www.w3.org/TR/html-design-principles/</a>
-   <dt id="biblio-html5">[HTML5]
-   <dd>Ian Hickson; et al. <a href="https://www.w3.org/TR/html5/"><cite>HTML5</cite></a>. 27 March 2018. REC. URL: <a href="https://www.w3.org/TR/html5/">https://www.w3.org/TR/html5/</a>
   </dl>
   <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
   <div style="counter-reset:issue">
